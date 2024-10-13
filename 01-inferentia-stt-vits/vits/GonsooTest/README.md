@@ -4,6 +4,7 @@
 # Summary
 - The customer wants to use a TTS model called ["Conditional Variational Autoencoder with Adversarial Learning for End-to-End Text-to-Speech"](https://github.com/jaywalnut310/vits.git) on Inferentia.
 After completing a neuron environment setup, I successfully loaded the model onto the CPU and performed inference. However, the Neuron compilation encountered several errors. Please refer to the "Exact compile log result" below. Is it possible to provide guidance on resolving these errors?
+To reproduce this error, please follow the steps as below.
 ---
 
 
@@ -21,7 +22,9 @@ After completing a neuron environment setup, I successfully loaded the model ont
 
 
 ## 2. Downlaod Git
+Clone the folloiwng git
 ```
+git clone https://github.com/gonsoomoon-ml/lab.git
 ```
 ## 3. Create conda virtual environment
 - install conda
@@ -89,10 +92,9 @@ After completing a neuron environment setup, I successfully loaded the model ont
 
 
 # B. Test Compilation
-## 0
-- Clone original git and copy models/pretrained_ljs.pth" into the same folder in this git, /home/ubuntu/vits/models
+## 0. Obtain vits model weight file
+- Clone original git and copy models/pretrained_ljs.pth" into the same folder in this git, and copy models/pretrained_ljs.pth" to 01-inferentia-stt-vits/vits/models
     - ["Conditional Variational Autoencoder with Adversarial Learning for End-to-End Text-to-Speech"](https://github.com/jaywalnut310/vits.git) 
-- models/pretrained_ljs.pth", net_g, None
 ## 1. Test neuron compilation through python file
 - Make sure that you are in the conda virtual environment, (conda-vits-py310)
     - ![run_compile_test.png](img/run_compile_test.png)

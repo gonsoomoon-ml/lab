@@ -1,0 +1,11 @@
+# Gonsoo's new python dependencey
+torch==1.13.1
+numpy==1.22.2
+Cython==3.0.11
+librosa==0.9.2
+numba==0.55.2
+matplotlib==3.6.3
+phonemizer==2.2.1
+scipy==1.10.1
+setuptools==69.5.1
+Unidecode==1.1.1

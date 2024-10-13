@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../mms-onnx"
+		},
+		{
+			"path": "../lab"
+		}
+	],
+	"settings": {}
+}

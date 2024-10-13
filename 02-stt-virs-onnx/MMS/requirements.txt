@@ -1,0 +1,15 @@
+pip>=23.2
+gradio==4.37.1
+accelerate
+librosa
+transformers
+torch
+Cython==0.29.21
+phonemizer==2.2.1
+scipy
+numpy==1.22.4
+flashlight-text
+torchaudio
+matplotlib
+Unidecode==1.1.1
+monotonic-align

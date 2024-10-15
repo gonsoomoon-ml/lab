@@ -198,8 +198,53 @@ import time
 import torch
 from ultralytics import YOLO
 import numpy as np
+def benchmark_inference_neuron(model, preprocessed_image_torch, num_runs=50, num_warmup=10):
+    # 워밍업 실행
+    for _ in range(num_warmup):
+        _ = model(preprocessed_image_torch)
+            
+    # 벤치마킹 실행
+    inference_times = []
+    for _ in range(num_runs):
+        start_time = time.time()
+        
+        results = model(preprocessed_image_torch)
+        
+        end_time = time.time()
+        inference_time = (end_time - start_time) * 1000  # ms로 변환
+        inference_times.append(inference_time)
+    
+    # 결과 계산
+    avg_time = np.mean(inference_times)
+    std_time = np.std(inference_times)
+    min_time = np.min(inference_times)
+    max_time = np.max(inference_times)
+    
+    return {
+        "average_time": avg_time,
+        "std_dev": std_time,
+        "min_time": min_time,
+        "max_time": max_time,
+        "all_times": inference_times
+    }
 
-def benchmark_inference(model, image_path, num_runs=50, num_warmup=10):
+def show_benchmark_results(results):
+    print("Benchmark Results:")
+    print(f"Average Inference Time: {results['average_time']:.2f} ms")
+    print(f"Standard Deviation: {results['std_dev']:.2f} ms")
+    print(f"Min Inference Time: {results['min_time']:.2f} ms")
+    print(f"Max Inference Time: {results['max_time']:.2f} ms")
+
+    # 히스토그램 그리기 (선택사항)
+    import matplotlib.pyplot as plt
+
+    plt.hist(results['all_times'], bins=20)
+    plt.title('Inference Time Distribution')
+    plt.xlabel('Time (ms)')
+    plt.ylabel('Frequency')
+    plt.show()
+
+def benchmark_inference_ultralytics(model, image_path, num_runs=50, num_warmup=10):
     # 워밍업 실행
     for _ in range(num_warmup):
         _ = model.predict(image_path, 
@@ -207,7 +252,6 @@ def benchmark_inference(model, image_path, num_runs=50, num_warmup=10):
                           save_txt=False, 
                           save_crop=False, 
                           save_conf=False,
-                          device=[0,1,2,3]
                           )
     
     # 벤치마킹 실행
@@ -220,7 +264,6 @@ def benchmark_inference(model, image_path, num_runs=50, num_warmup=10):
                                 save_txt=False, 
                                 save_crop=False, 
                                 save_conf=False,
-                                device=['nc:0', 'nc:1', 'nc:2']
                                 )
         
         end_time = time.time()

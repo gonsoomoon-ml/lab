@@ -10,3 +10,4 @@ scipy==1.10.1
 setuptools==69.5.1
 Unidecode==1.1.1
 tritonclient[all]==2.50.0
+pandas==1.4.4

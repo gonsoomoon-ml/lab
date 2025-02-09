@@ -1,185 +1,226 @@
-"""Transformer-based text classification on SageMaker with Hugging Face"""
 
 # Python Built-Ins:
 import argparse
-import logging
+# import logging
 import os
 import sys
-from typing import List, Optional
+# from typing import List, Optional
 
-# External Dependencies:
-import datasets
-#from datasets import disable_progress_bar as disable_datasets_progress_bar
-from transformers import (
-    AutoModelForSequenceClassification,
-    Trainer,
-    TrainingArguments,
-    AutoTokenizer,
-    DataCollatorWithPadding,
-)
-from sklearn.metrics import accuracy_score, precision_recall_fscore_support
 
-# Set up logging:
-logging.basicConfig(
-    level=logging.getLevelName("INFO"),
-    handlers=[logging.StreamHandler(sys.stdout)],
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-)
-logger = logging.getLogger(__name__)
-datasets.disable_progress_bar()  # Too noisy on conventional log streams
 
-# Factoring your code out into smaller helper functions can help with debugging:
+import re
+import torch
+from datasets import load_dataset, Dataset
+from transformers import AutoTokenizer, AutoModelForCausalLM
+from trl import GRPOConfig, GRPOTrainer
+
+
+
+##############################################################################
+# Add this at the start of your script to verify versions
+##############################################################################
+import torch
+print(f"PyTorch version: {torch.__version__}")
+print(f"CUDA available: {torch.cuda.is_available()}")
+if torch.cuda.is_available():
+    print(f"CUDA version: {torch.version.cuda}")
+
+##############################################################################
+# pip list 실행 및 결과 출력
+##############################################################################
+try:
+    result = subprocess.run("pip list | grep -E 'torch|transformers|vllm|trl|datasets'", 
+                            shell=True, 
+                            capture_output=True, 
+                            text=True)
+    print("Installed versions:")
+    print(result.stdout)
+except Exception as e:
+    print(f"Error checking versions: {e}")
+
+
+
+
+SYSTEM_PROMPT = """
+Respond in the following format:
+<reasoning>
+...
+</reasoning>
+<answer>
+...
+</answer>
+"""
+
+XML_COT_FORMAT = """\
+<reasoning>
+{reasoning}
+</reasoning>
+<answer>
+{answer}
+</answer>
+"""
+
+def extract_xml_answer(text: str) -> str:
+    answer = text.split("<answer>")[-1]
+    answer = answer.split("</answer>")[0]
+    return answer.strip()
+
+def extract_hash_answer(text: str) -> str | None:
+    if "####" not in text:
+        return None
+    return text.split("####")[1].strip()
+
+# uncomment middle messages for 1-shot prompting
+def get_gsm8k_questions(split = "train") -> Dataset:
+    data = load_dataset('openai/gsm8k', 'main')[split] # type: ignore
+    data = data.map(lambda x: { # type: ignore
+        'prompt': [
+            {'role': 'system', 'content': SYSTEM_PROMPT},
+            {'role': 'user', 'content': x['question']}
+        ],
+        'answer': extract_hash_answer(x['answer'])
+    }) # type: ignore
+    return data # type: ignore
+
+# Reward functions
+def correctness_reward_func(prompts, completions, answer, **kwargs) -> list[float]:
+    responses = [completion[0]['content'] for completion in completions]
+    q = prompts[0][-1]['content']
+    extracted_responses = [extract_xml_answer(r) for r in responses]
+    print('-'*20, f"Question:\n{q}", f"\nAnswer:\n{answer[0]}", f"\nResponse:\n{responses[0]}", f"\nExtracted:\n{extracted_responses[0]}")
+    return [2.0 if r == a else 0.0 for r, a in zip(extracted_responses, answer)]
+
+def int_reward_func(completions, **kwargs) -> list[float]:
+    responses = [completion[0]['content'] for completion in completions]
+    extracted_responses = [extract_xml_answer(r) for r in responses]
+    return [0.5 if r.isdigit() else 0.0 for r in extracted_responses]
+
+def strict_format_reward_func(completions, **kwargs) -> list[float]:
+    """Reward function that checks if the completion has a specific format."""
+    pattern = r"^<reasoning>\n.*?\n</reasoning>\n<answer>\n.*?\n</answer>\n$"
+    responses = [completion[0]["content"] for completion in completions]
+    matches = [re.match(pattern, r) for r in responses]
+    return [0.5 if match else 0.0 for match in matches]
+
+def soft_format_reward_func(completions, **kwargs) -> list[float]:
+    """Reward function that checks if the completion has a specific format."""
+    pattern = r"<reasoning>.*?</reasoning>\s*<answer>.*?</answer>"
+    responses = [completion[0]["content"] for completion in completions]
+    matches = [re.match(pattern, r) for r in responses]
+    return [0.5 if match else 0.0 for match in matches]
+
+def count_xml(text) -> float:
+    count = 0.0
+    if text.count("<reasoning>\n") == 1:
+        count += 0.125
+    if text.count("\n</reasoning>\n") == 1:
+        count += 0.125
+    if text.count("\n<answer>\n") == 1:
+        count += 0.125
+        count -= len(text.split("\n</answer>\n")[-1])*0.001
+    if text.count("\n</answer>") == 1:
+        count += 0.125
+        count -= (len(text.split("\n</answer>")[-1]) - 1)*0.001
+    return count
+
+def xmlcount_reward_func(completions, **kwargs) -> list[float]:
+    contents = [completion[0]["content"] for completion in completions]
+    return [count_xml(c) for c in contents]
+
+def main(args):
+    # Load and prep dataset
+
+    dataset = get_gsm8k_questions()
+    print("dataset: ", dataset)
+
+    model_name = "Qwen/Qwen2.5-0.5B-Instruct"
+
+    output_dir="outputs/Qwen-0.5B-GRPO"
+    run_name="Qwen-0.5B-GRPO-gsm8k"
+
+    training_args = GRPOConfig(
+        output_dir=output_dir,
+        run_name=run_name,
+        learning_rate=5e-6,
+        adam_beta1 = 0.9,
+        adam_beta2 = 0.99,
+        weight_decay = 0.1,
+        warmup_ratio = 0.1,
+        lr_scheduler_type='cosine',
+        logging_steps=1,
+        bf16=True,
+        per_device_train_batch_size=1,
+        gradient_accumulation_steps=4,
+        num_generations=16,
+        max_prompt_length=256,
+        max_completion_length=200,
+        num_train_epochs=1,
+        save_steps=100,
+        max_grad_norm=0.1,
+        log_on_each_node=False,
+        use_vllm=True,
+        vllm_gpu_memory_utilization=.3,
+        vllm_device="cuda:0",
+        report_to="none" #I'm disabling Wandb.
+    )
+
+    model = AutoModelForCausalLM.from_pretrained(
+                model_name,
+                torch_dtype=torch.bfloat16,
+                device_map=None
+            ).to("cuda")
+
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    tokenizer.pad_token = tokenizer.eos_token
+
+    trainer = GRPOTrainer(
+        model=model,
+        processing_class=tokenizer,
+        reward_funcs=[
+            xmlcount_reward_func,
+            soft_format_reward_func,
+            strict_format_reward_func,
+            int_reward_func,
+            correctness_reward_func],
+        args=training_args,
+        train_dataset=dataset,
+        #peft_config=peft_config
+    )
+    trainer.train()    
+
+    # Save the model output
+    trainer.save_model(args.model_dir)
+
 
 
 def parse_args():
     """Parse hyperparameters and data args from CLI arguments and environment variables"""
     parser = argparse.ArgumentParser()
 
+    ##############################################################################
     # hyperparameters sent by the client are passed as command-line arguments to the script.
-    parser.add_argument("--model_id", type=str, required=True)
-    parser.add_argument("--class_names", type=lambda s: s.split(","), required=True)
-    parser.add_argument("--learning_rate", type=float, default=5e-5)
-    parser.add_argument("--warmup_steps", type=int, default=500)
-    parser.add_argument("--epochs", type=int, default=3)
-    parser.add_argument("--train_max_steps", type=int, default=-1)
-    parser.add_argument("--train_batch_size", type=int, default=32)
-    parser.add_argument("--eval_batch_size", type=int, default=64)
-    parser.add_argument("--fp16", type=int, default=1)
+    ##############################################################################
+    # Placeholder
 
+    ##############################################################################
     # Data, model, and output folders are set by combination of CLI args and env vars:
-    parser.add_argument("--train", type=str, default=os.environ.get("SM_CHANNEL_TRAIN"))
-    parser.add_argument("--test", type=str, default=os.environ.get("SM_CHANNEL_TEST"))
+    ##############################################################################
+    # parser.add_argument("--train", type=str, default=os.environ.get("SM_CHANNEL_TRAIN"))
+    # parser.add_argument("--test", type=str, default=os.environ.get("SM_CHANNEL_TEST"))
     parser.add_argument("--model_dir", type=str, default=os.environ.get("SM_MODEL_DIR"))
-    parser.add_argument("--output_data_dir", type=str, default=os.environ.get("SM_OUTPUT_DATA_DIR"))
-    # parser.add_argument("--n_gpus", type=int, default=os.environ.get("SM_NUM_GPUS"))
-
+    
     args, _ = parser.parse_known_args()
     return args
 
 
-def compute_metrics(pred):
-    labels = pred.label_ids
-    preds = pred.predictions.argmax(-1)
-    precision, recall, f1, _ = precision_recall_fscore_support(labels, preds, average="micro")
-    acc = accuracy_score(labels, preds)
-    return {"accuracy": acc, "f1": f1, "precision": precision, "recall": recall}
+import subprocess
 
-
-def get_model(model_id: str, class_names: List[str]) -> (
-    AutoTokenizer, AutoModelForSequenceClassification, DataCollatorWithPadding
-):
-    """Set up tokenizer, model, data_collator from job parameters"""
-    tokenizer = AutoTokenizer.from_pretrained(model_id)
-
-    model = AutoModelForSequenceClassification.from_pretrained(
-        model_id, num_labels=len(class_names)
-    )
-    model.config.label2id = {name: ix for ix, name in enumerate(class_names)}
-    model.config.id2label = {ix: name for ix, name in enumerate(class_names)}
-
-    data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
-
-    return tokenizer, model, data_collator
-
-
-def load_datasets(tokenizer: AutoTokenizer, train_dir: str, test_dir: Optional[str] = None) -> (
-    datasets.Dataset, Optional[datasets.Dataset]
-):
-    """Load and pre-process training (+ validation?) dataset(s)"""
-
-    def preprocess(batch):
-        """Tokenize and pre-process raw examples for training/validation"""
-        result = tokenizer(batch["title"], truncation=True)
-        result["label"] = batch["category"]
-        return result
-
-
-    raw_train_dataset = datasets.load_dataset(
-        "csv",
-        data_files=[os.path.join(train_dir, f) for f in os.listdir(train_dir)],
-        column_names=["category", "title", "content"],
-        split=datasets.Split.ALL,
-    )
-    train_dataset = raw_train_dataset.map(
-        preprocess, batched=True, batch_size=1000, remove_columns=raw_train_dataset.column_names
-    )
-    logger.info(f"Loaded train_dataset length is: {len(train_dataset)}")
-    if test_dir:
-        # test channel is optional:
-        raw_test_dataset = datasets.load_dataset(
-            "csv",
-            data_files=[os.path.join(test_dir, f) for f in os.listdir(test_dir)],
-            column_names=["category", "title", "content"],
-            split=datasets.Split.ALL,
-        )
-        test_dataset = raw_test_dataset.map(
-            preprocess, batched=True, batch_size=1000, remove_columns=raw_test_dataset.column_names
-        )
-        logger.info(f"Loaded test_dataset length is: {len(test_dataset)}")
-    else:
-        test_dataset = None
-        logger.info("No test_dataset provided")
-    return train_dataset, test_dataset
-
-
-# Only run this main block if running as a script (e.g. in training), not when imported as a module
-# (which would be the case if used at inference):
 if __name__ == "__main__":
+
     # Load job parameters:
     args = parse_args()
-    training_args = TrainingArguments(
-        max_steps=args.train_max_steps,
-        num_train_epochs=args.epochs,
-        per_device_train_batch_size=args.train_batch_size,
-        per_device_eval_batch_size=args.eval_batch_size,
-        fp16=bool(args.fp16),
-        evaluation_strategy="epoch",
-        save_strategy="epoch",
-        load_best_model_at_end=True,
-        metric_for_best_model="f1",
-        learning_rate=args.learning_rate,
-        warmup_steps=args.warmup_steps,
-        disable_tqdm=True,  # Interactive progress bars too noisy on conventional log streams
-        # You could save checkpoints & logs under args.output_data_dir to upload them, but it
-        # increases job run time by a few minutes:
-        output_dir="/tmp/transformers/checkpoints",
-        logging_dir="/tmp/transformers/logs",
-    )
+    main(args)
 
-    # Load tokenizer/model/collator:
-    tokenizer, model, collator = get_model(model_id=args.model_id, class_names=args.class_names)
 
-    # Load and pre-process the dataset:
-    train_dataset, test_dataset = load_datasets(
-        tokenizer=tokenizer,
-        train_dir=args.train,
-        test_dir=args.test,
-    )
 
-    # Create Trainer instance
-    trainer = Trainer(
-        model=model,
-        args=training_args,
-        compute_metrics=compute_metrics,
-        train_dataset=train_dataset,
-        eval_dataset=test_dataset,
-        tokenizer=tokenizer,
-        data_collator=collator,
-    )
-
-    # Train the model
-    trainer.train()
-
-    # Save the model output
-    trainer.save_model(args.model_dir)
-
-    # Evaluate the final model and save a report, if test dataset provided:
-    if test_dataset:
-        eval_result = trainer.evaluate(eval_dataset=test_dataset)
-        # The 'output' folder will also (separately from model) get uploaded to S3 by SageMaker:
-        if args.output_data_dir:
-            os.makedirs(args.output_data_dir, exist_ok=True)
-            with open(os.path.join(args.output_data_dir, "eval_results.txt"), "w") as writer:
-                print("***** Eval results *****")
-                for key, value in sorted(eval_result.items()):
-                    writer.write(f"{key} = {value}\n")
+    

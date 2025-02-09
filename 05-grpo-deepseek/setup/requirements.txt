@@ -3,3 +3,4 @@ sagemaker==2.232.2
 vllm==0.7.2
 trl==0.14.0 
 datasets==3.2.0
+cloudpickle==2.2.1

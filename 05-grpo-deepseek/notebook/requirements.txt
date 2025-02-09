@@ -7,3 +7,4 @@ trl==0.14.0
 datasets==3.2.0
 # lock s3fs to this specific version as more recent ones introduce dependency on aiobotocore, which is not compatible with botocore
 s3fs==0.4.2
+cloudpickle==2.2.1

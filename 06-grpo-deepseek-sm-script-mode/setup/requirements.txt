@@ -1,0 +1,7 @@
+vllm==0.7.2
+trl==0.14.0 
+datasets==3.2.0
+#sagemaker>=2.156.0,<3 # For notebook
+torch==2.5.1      
+transformers==4.48.3
+sagemaker==2.232.2

@@ -1,4 +1,5 @@
-sagemaker==2.239.0 # For notebook
+sagemaker>=2.156.0,<3 # For notebook
+# sagemaker==2.239.0 
 vllm==0.7.2
 trl==0.14.0 
 datasets==3.2.0

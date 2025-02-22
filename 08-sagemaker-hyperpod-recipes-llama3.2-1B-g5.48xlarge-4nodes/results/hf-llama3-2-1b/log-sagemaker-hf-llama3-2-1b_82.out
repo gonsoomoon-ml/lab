@@ -1,0 +1,922 @@
++ export NCCL_DEBUG=WARN
++ NCCL_DEBUG=WARN
++ export FI_PROVIDER=efa
++ FI_PROVIDER=efa
++ export 'NCCL_SOCKET_IFNAME=^lo,docker0,veth_def_agent'
++ NCCL_SOCKET_IFNAME='^lo,docker0,veth_def_agent'
++ export NCCL_IGNORE_DISABLED_P2P=1
++ NCCL_IGNORE_DISABLED_P2P=1
++ export TORCH_NCCL_ASYNC_ERROR_HANDLING=1
++ TORCH_NCCL_ASYNC_ERROR_HANDLING=1
++ export TORCH_DIST_INIT_BARRIER=1
++ TORCH_DIST_INIT_BARRIER=1
++ export CUDA_DEVICE_MAX_CONNECTIONS=1
++ CUDA_DEVICE_MAX_CONNECTIONS=1
+++ head -n 1 /fsx/ubuntu/sagemaker-hyperpod-recipes/results/hf-llama3-2-1b/hostname
++ MASTER_ADDR=ip-10-1-107-242
+++ cut -d : -f 1
++++ hostname
+++ grep -nx -o '\bip-10-1-97-113\b' /fsx/ubuntu/sagemaker-hyperpod-recipes/results/hf-llama3-2-1b/hostname
++ NODEID=3
++ NNODES=4
++ PROCESSES_PER_NODE=8
++ MASTER_PORT=41000
++ DISTRIBUTED_ARGS='--nproc_per_node 8 --nnodes 4 --rdzv_endpoint=ip-10-1-107-242 --rdzv_id=100 --rdzv_backend=c10d'
+++ hostname
++ LAUNCHER_HOSTNAME=ip-10-1-97-113
++ mkdir -p /fsx/ubuntu/tmp
++ GIT_CLONE_DIR=/fsx/ubuntu/tmp/ip-10-1-97-113
++ [[ -d /fsx/ubuntu/tmp/ip-10-1-97-113 ]]
++ git clone https://github.com/aws/sagemaker-hyperpod-training-adapter-for-nemo.git /fsx/ubuntu/tmp/ip-10-1-97-113
+Cloning into '/fsx/ubuntu/tmp/ip-10-1-97-113'...
++ export NCCL_DEBUG=WARN
++ NCCL_DEBUG=WARN
++ export FI_PROVIDER=efa
++ FI_PROVIDER=efa
++ export 'NCCL_SOCKET_IFNAME=^lo,docker0,veth_def_agent'
++ NCCL_SOCKET_IFNAME='^lo,docker0,veth_def_agent'
++ export NCCL_IGNORE_DISABLED_P2P=1
++ NCCL_IGNORE_DISABLED_P2P=1
++ export TORCH_NCCL_ASYNC_ERROR_HANDLING=1
++ TORCH_NCCL_ASYNC_ERROR_HANDLING=1
++ export TORCH_DIST_INIT_BARRIER=1
++ TORCH_DIST_INIT_BARRIER=1
++ export CUDA_DEVICE_MAX_CONNECTIONS=1
++ CUDA_DEVICE_MAX_CONNECTIONS=1
+++ head -n 1 /fsx/ubuntu/sagemaker-hyperpod-recipes/results/hf-llama3-2-1b/hostname
++ export NCCL_DEBUG=WARN
++ NCCL_DEBUG=WARN
++ export FI_PROVIDER=efa
++ FI_PROVIDER=efa
++ export 'NCCL_SOCKET_IFNAME=^lo,docker0,veth_def_agent'
++ NCCL_SOCKET_IFNAME='^lo,docker0,veth_def_agent'
++ export NCCL_IGNORE_DISABLED_P2P=1
++ NCCL_IGNORE_DISABLED_P2P=1
++ export TORCH_NCCL_ASYNC_ERROR_HANDLING=1
++ TORCH_NCCL_ASYNC_ERROR_HANDLING=1
++ export TORCH_DIST_INIT_BARRIER=1
++ TORCH_DIST_INIT_BARRIER=1
++ export CUDA_DEVICE_MAX_CONNECTIONS=1
++ CUDA_DEVICE_MAX_CONNECTIONS=1
+++ head -n 1 /fsx/ubuntu/sagemaker-hyperpod-recipes/results/hf-llama3-2-1b/hostname
++ MASTER_ADDR=ip-10-1-107-242
++ MASTER_ADDR=ip-10-1-107-242
+++ cut -d : -f 1
++++ hostname
+++ cut -d : -f 1
++++ hostname
+++ grep -nx -o '\bip-10-1-24-129\b' /fsx/ubuntu/sagemaker-hyperpod-recipes/results/hf-llama3-2-1b/hostname
+++ grep -nx -o '\bip-10-1-107-242\b' /fsx/ubuntu/sagemaker-hyperpod-recipes/results/hf-llama3-2-1b/hostname
++ NODEID=1
++ NNODES=4
++ PROCESSES_PER_NODE=8
++ MASTER_PORT=41000
++ DISTRIBUTED_ARGS='--nproc_per_node 8 --nnodes 4 --rdzv_endpoint=ip-10-1-107-242 --rdzv_id=100 --rdzv_backend=c10d'
+++ hostname
++ NODEID=0
++ NNODES=4
++ PROCESSES_PER_NODE=8
++ MASTER_PORT=41000
++ DISTRIBUTED_ARGS='--nproc_per_node 8 --nnodes 4 --rdzv_endpoint=ip-10-1-107-242 --rdzv_id=100 --rdzv_backend=c10d'
+++ hostname
++ LAUNCHER_HOSTNAME=ip-10-1-24-129
++ mkdir -p /fsx/ubuntu/tmp
++ LAUNCHER_HOSTNAME=ip-10-1-107-242
++ mkdir -p /fsx/ubuntu/tmp
++ GIT_CLONE_DIR=/fsx/ubuntu/tmp/ip-10-1-24-129
++ [[ -d /fsx/ubuntu/tmp/ip-10-1-24-129 ]]
++ git clone https://github.com/aws/sagemaker-hyperpod-training-adapter-for-nemo.git /fsx/ubuntu/tmp/ip-10-1-24-129
++ GIT_CLONE_DIR=/fsx/ubuntu/tmp/ip-10-1-107-242
++ [[ -d /fsx/ubuntu/tmp/ip-10-1-107-242 ]]
++ git clone https://github.com/aws/sagemaker-hyperpod-training-adapter-for-nemo.git /fsx/ubuntu/tmp/ip-10-1-107-242
+Cloning into '/fsx/ubuntu/tmp/ip-10-1-24-129'...
++ export NCCL_DEBUG=WARN
++ NCCL_DEBUG=WARN
++ export FI_PROVIDER=efa
++ FI_PROVIDER=efa
++ export 'NCCL_SOCKET_IFNAME=^lo,docker0,veth_def_agent'
++ NCCL_SOCKET_IFNAME='^lo,docker0,veth_def_agent'
++ export NCCL_IGNORE_DISABLED_P2P=1
++ NCCL_IGNORE_DISABLED_P2P=1
++ export TORCH_NCCL_ASYNC_ERROR_HANDLING=1
++ TORCH_NCCL_ASYNC_ERROR_HANDLING=1
++ export TORCH_DIST_INIT_BARRIER=1
++ TORCH_DIST_INIT_BARRIER=1
++ export CUDA_DEVICE_MAX_CONNECTIONS=1
++ CUDA_DEVICE_MAX_CONNECTIONS=1
+Cloning into '/fsx/ubuntu/tmp/ip-10-1-107-242'...
+++ head -n 1 /fsx/ubuntu/sagemaker-hyperpod-recipes/results/hf-llama3-2-1b/hostname
++ MASTER_ADDR=ip-10-1-107-242
+++ cut -d : -f 1
++++ hostname
+++ grep -nx -o '\bip-10-1-67-233\b' /fsx/ubuntu/sagemaker-hyperpod-recipes/results/hf-llama3-2-1b/hostname
++ NODEID=2
++ NNODES=4
++ PROCESSES_PER_NODE=8
++ MASTER_PORT=41000
++ DISTRIBUTED_ARGS='--nproc_per_node 8 --nnodes 4 --rdzv_endpoint=ip-10-1-107-242 --rdzv_id=100 --rdzv_backend=c10d'
+++ hostname
++ LAUNCHER_HOSTNAME=ip-10-1-67-233
++ mkdir -p /fsx/ubuntu/tmp
++ GIT_CLONE_DIR=/fsx/ubuntu/tmp/ip-10-1-67-233
++ [[ -d /fsx/ubuntu/tmp/ip-10-1-67-233 ]]
++ git clone https://github.com/aws/sagemaker-hyperpod-training-adapter-for-nemo.git /fsx/ubuntu/tmp/ip-10-1-67-233
+Cloning into '/fsx/ubuntu/tmp/ip-10-1-67-233'...
++ GIT_CLONE_DIR=/fsx/ubuntu/tmp/ip-10-1-97-113/
++ cd /fsx/ubuntu/tmp/ip-10-1-97-113/
++ rm -rf __pycache__
++ unset SLURM_NTASKS
++ torchrun --nproc_per_node 8 --nnodes 4 --rdzv_endpoint=ip-10-1-107-242 --rdzv_id=100 --rdzv_backend=c10d examples/llama/llama_pretrain.py --config-path=/fsx/ubuntu/sagemaker-hyperpod-recipes/results/hf-llama3-2-1b --config-name=hf-llama3-2-1b_hydra.yaml
++ GIT_CLONE_DIR=/fsx/ubuntu/tmp/ip-10-1-24-129/
++ cd /fsx/ubuntu/tmp/ip-10-1-24-129/
++ rm -rf __pycache__
++ unset SLURM_NTASKS
++ torchrun --nproc_per_node 8 --nnodes 4 --rdzv_endpoint=ip-10-1-107-242 --rdzv_id=100 --rdzv_backend=c10d examples/llama/llama_pretrain.py --config-path=/fsx/ubuntu/sagemaker-hyperpod-recipes/results/hf-llama3-2-1b --config-name=hf-llama3-2-1b_hydra.yaml
++ GIT_CLONE_DIR=/fsx/ubuntu/tmp/ip-10-1-107-242/
++ cd /fsx/ubuntu/tmp/ip-10-1-107-242/
++ rm -rf __pycache__
++ unset SLURM_NTASKS
++ torchrun --nproc_per_node 8 --nnodes 4 --rdzv_endpoint=ip-10-1-107-242 --rdzv_id=100 --rdzv_backend=c10d examples/llama/llama_pretrain.py --config-path=/fsx/ubuntu/sagemaker-hyperpod-recipes/results/hf-llama3-2-1b --config-name=hf-llama3-2-1b_hydra.yaml
++ GIT_CLONE_DIR=/fsx/ubuntu/tmp/ip-10-1-67-233/
++ cd /fsx/ubuntu/tmp/ip-10-1-67-233/
++ rm -rf __pycache__
++ unset SLURM_NTASKS
++ torchrun --nproc_per_node 8 --nnodes 4 --rdzv_endpoint=ip-10-1-107-242 --rdzv_id=100 --rdzv_backend=c10d examples/llama/llama_pretrain.py --config-path=/fsx/ubuntu/sagemaker-hyperpod-recipes/results/hf-llama3-2-1b --config-name=hf-llama3-2-1b_hydra.yaml
+W0222 13:56:06.191000 140128955876608 torch/distributed/run.py:779] 
+W0222 13:56:06.191000 140128955876608 torch/distributed/run.py:779] *****************************************
+W0222 13:56:06.191000 140128955876608 torch/distributed/run.py:779] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0222 13:56:06.191000 140128955876608 torch/distributed/run.py:779] *****************************************
+W0222 13:56:06.225000 139676599543040 torch/distributed/run.py:779] 
+W0222 13:56:06.225000 139676599543040 torch/distributed/run.py:779] *****************************************
+W0222 13:56:06.225000 139676599543040 torch/distributed/run.py:779] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0222 13:56:06.225000 139676599543040 torch/distributed/run.py:779] *****************************************
+W0222 13:56:06.227000 140211690095872 torch/distributed/run.py:779] 
+W0222 13:56:06.227000 140211690095872 torch/distributed/run.py:779] *****************************************
+W0222 13:56:06.227000 140211690095872 torch/distributed/run.py:779] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0222 13:56:06.227000 140211690095872 torch/distributed/run.py:779] *****************************************
+W0222 13:56:06.254000 139912129873152 torch/distributed/run.py:779] 
+W0222 13:56:06.254000 139912129873152 torch/distributed/run.py:779] *****************************************
+W0222 13:56:06.254000 139912129873152 torch/distributed/run.py:779] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0222 13:56:06.254000 139912129873152 torch/distributed/run.py:779] *****************************************
+[2025-02-22 13:56:12.067: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.075: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.079: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.082: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.088: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.092: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.100: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.106: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.116: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.154: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.154: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.154: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[NeMo W 2025-02-22 13:56:12 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:473: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+[NeMo W 2025-02-22 13:56:12 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:497: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      @custom_bwd
+    
+[NeMo W 2025-02-22 13:56:12 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:521: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+[NeMo W 2025-02-22 13:56:12 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:527: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      @custom_bwd
+    
+[NeMo W 2025-02-22 13:56:12 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:536: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+[NeMo W 2025-02-22 13:56:12 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:542: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      @custom_bwd
+    
+[NeMo W 2025-02-22 13:56:12 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:549: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+[NeMo W 2025-02-22 13:56:12 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:558: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      @custom_bwd
+    
+[NeMo W 2025-02-22 13:56:12 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:565: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+[NeMo W 2025-02-22 13:56:12 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:570: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      @custom_bwd
+    
+[NeMo W 2025-02-22 13:56:12 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:581: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+[NeMo W 2025-02-22 13:56:12 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:600: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      @custom_bwd
+    
+[2025-02-22 13:56:12.162: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.163: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.166: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.166: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.176: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.179: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.212: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.225: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.248: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.264: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.287: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.372: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.375: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.416: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.419: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.464: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.557: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.669: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.864: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:56:12.899: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[NeMo W 2025-02-22 13:56:23 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/megatron/core/tensor_parallel/layers.py:278: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+[NeMo W 2025-02-22 13:56:23 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/megatron/core/tensor_parallel/layers.py:294: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      @custom_bwd
+    
+[NeMo W 2025-02-22 13:56:23 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/megatron/core/tensor_parallel/layers.py:389: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+[NeMo W 2025-02-22 13:56:23 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/megatron/core/tensor_parallel/layers.py:428: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      @custom_bwd
+    
+[NeMo W 2025-02-22 13:56:23 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/embedding.py:193: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+[NeMo W 2025-02-22 13:56:23 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/embedding.py:258: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+[NeMo W 2025-02-22 13:56:25 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/megatron/core/dist_checkpointing/strategies/torch.py:22: DeprecationWarning: `torch.distributed._sharded_tensor` will be deprecated, use `torch.distributed._shard.sharded_tensor` instead
+      from torch.distributed._sharded_tensor import ShardedTensor as TorchShardedTensor
+    
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+[NeMo W 2025-02-22 13:56:25 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/megatron/core/models/gpt/gpt_layer_specs.py:41: UserWarning: Apex is not installed. Falling back to Torch LayerNorm
+      warnings.warn(f'Apex is not installed. Falling back to Torch LayerNorm')
+    
+[NeMo W 2025-02-22 13:56:25 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/megatron/core/models/retro/encoder_spec.py:47: UserWarning: Apex is not installed. Falling back to Torch LayerNorm
+      warnings.warn(f'Apex is not installed. Falling back to Torch LayerNorm')
+    
+[NeMo W 2025-02-22 13:56:25 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/megatron/core/models/retro/decoder_spec.py:39: UserWarning: Apex is not installed. Falling back to Torch LayerNorm
+      warnings.warn(f'Apex is not installed. Falling back to Torch LayerNorm')
+    
+[NeMo W 2025-02-22 13:56:25 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/megatron/core/models/T5/t5_spec.py:46: UserWarning: Apex is not installed. Falling back to Torch LayerNorm
+      warnings.warn(f'Apex is not installed. Falling back to Torch LayerNorm')
+    
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+[NeMo I 2025-02-22 13:56:29 nemo_logging:381] 
+    
+    ************** Experiment configuration ***********
+[NeMo I 2025-02-22 13:56:29 nemo_logging:381] 
+    name:
+    - hf_llama_8b
+    use_smp_model: true
+    distributed_backend: nccl
+    log_perf_metrics: false
+    model:
+      model_type: llama_v3
+      train_batch_size: 2
+      val_batch_size: 1
+      fsdp: true
+      moe: false
+      activation_checkpointing: false
+      activation_loading_horizon: 1
+      delayed_param: true
+      offload_activations: false
+      seed: 12345
+      grad_clip: 1.0
+      sharding_strategy: hybrid_shard
+      forward_prefetch: true
+      shard_degree: 8
+      backward_fetch_policy: backward_pre
+      auto_wrap_policy: transformer_auto_wrap_policy
+      limit_all_gathers: false
+      use_orig_param: true
+      context_parallel_degree: 1
+      tensor_model_parallel_degree: 2
+      expert_model_parallel_degree: 1
+      max_context_width: 8192
+      max_position_embeddings: 8192
+      num_hidden_layers: 16
+      hidden_size: 2048
+      num_attention_heads: 32
+      intermediate_size: 8192
+      initializer_range: 0.02
+      layernorm_epsilon: 1.0e-05
+      vocab_size: 128256
+      num_key_value_heads: 8
+      use_flash_attention: true
+      sliding_window: null
+      use_sliding_window: null
+      max_window_layers: null
+      rms_norm_eps: null
+      rope_theta: 500000.0
+      multi_modal: false
+      tie_word_embeddings: true
+      num_experts_per_tok: null
+      num_local_experts: null
+      moe_load_balancing: sinkhorn
+      global_token_shuffle: null
+      moe_all_to_all_dispatcher: null
+      fp8: false
+      fp8_amax_history_len: 1024
+      fp8_amax_compute_algo: max
+      do_finetune: false
+      hf_model_name_or_path: null
+      hf_access_token: null
+      precision: bf16
+      lr_decay_iters: 50
+      log_reduced_training_loss: true
+      optim:
+        name: adamw
+        lr: 0.0001
+        weight_decay: 0.01
+        betas:
+        - 0.9
+        - 0.95
+        sched:
+          name: CosineAnnealing
+          warmup_steps: 0
+          constant_steps: 0
+          min_lr: 1.0e-06
+      data:
+        train_dir: ''
+        val_dir: ''
+        dataset_type: hf
+        use_synthetic_data: true
+      gpu_affinity:
+        enabled: true
+      nsys_profile:
+        enabled: false
+        start_step: 10
+        end_step: 10
+        ranks:
+        - 0
+        gen_shape: false
+      viztracer:
+        enabled: false
+        ranks:
+        - 0
+        tracer_entries: 1000000
+        verbose: 1
+        max_stack_depth: -1
+        ignore_c_function: true
+        ignore_frozen: true
+        log_func_retval: false
+        log_func_args: false
+        log_print: false
+        log_gc: false
+        log_sparse: false
+        log_async: false
+        log_audit: null
+        pid_suffix: false
+        file_info: true
+        register_global: true
+        trace_self: false
+        min_duration: 200
+        minimize_memory: false
+        dump_raw: false
+        sanitize_function_name: false
+        output_file: null
+      peft:
+        peft_type: null
+        rank: 32
+        alpha: 16.0
+        dropout: 0.1
+        target_modules: null
+      rope_scaling:
+        rope_type: llama3
+        factor: 32.0
+        high_freq_factor: 4.0
+        low_freq_factor: 1.0
+        original_max_position_embeddings: 8192
+      nvte_attn_backend: null
+    trainer:
+      devices: 8
+      num_nodes: 4
+      accelerator: gpu
+      precision: bf16
+      max_steps: 50
+      log_every_n_steps: 1
+      val_check_interval: 1
+      limit_val_batches: 0
+    exp_manager:
+      exp_dir: ''
+      name: experiment
+      explicit_log_dir: null
+      create_tensorboard_logger: true
+      create_checkpoint_callback: true
+      checkpoint_callback_params:
+        save_top_k: 0
+        every_n_train_steps: 10
+        monitor: step
+        mode: max
+        save_last: false
+      export_full_model:
+        every_n_train_steps: 0
+        save_last: true
+        final_export_dir: null
+      checkpoint_dir: /checkpoints/
+      resume_from_checkpoint: null
+      auto_checkpoint:
+        enabled: false
+        warmup_steps: 12
+        drop_n_warmup_steps: 3
+    run:
+      name: hf-llama3-2-1b
+      results_dir: /fsx/ubuntu/sagemaker-hyperpod-recipes/results/hf-llama3-2-1b
+      time_limit: 6-00:00:00
+    
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+`Trainer(val_check_interval=1)` was configured so validation will run after every batch.
+[NeMo I 2025-02-22 13:56:30 nemo_logging:381] Experiments will be logged at experiment/2025-02-22_13-56-30
+[NeMo I 2025-02-22 13:56:30 nemo_logging:381] TensorboardLogger has been set up
+You are using a CUDA device ('NVIDIA A10G') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+Initializing distributed: GLOBAL_RANK: 0, MEMBER: 1/32
+Initializing distributed: GLOBAL_RANK: 20, MEMBER: 21/32
+[W222 13:56:34.689793707 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 11, MEMBER: 12/32
+Initializing distributed: GLOBAL_RANK: 24, MEMBER: 25/32
+[W222 13:56:35.264461418 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+[W222 13:56:35.566673670 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 13, MEMBER: 14/32
+[W222 13:56:35.598000638 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 26, MEMBER: 27/32
+Initializing distributed: GLOBAL_RANK: 15, MEMBER: 16/32
+[W222 13:56:36.305002304 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+[W222 13:56:36.005717275 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 7, MEMBER: 8/32
+[W222 13:56:36.814727769 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 27, MEMBER: 28/32
+Initializing distributed: GLOBAL_RANK: 28, MEMBER: 29/32
+[W222 13:56:36.704330830 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+[W222 13:56:36.713236753 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 23, MEMBER: 24/32
+[W222 13:56:36.255571508 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 22, MEMBER: 23/32
+[W222 13:56:36.281437251 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 12, MEMBER: 13/32
+Initializing distributed: GLOBAL_RANK: 16, MEMBER: 17/32
+[W222 13:56:36.775807227 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+[W222 13:56:36.611216333 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 17, MEMBER: 18/32
+[W222 13:56:36.649272674 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 4, MEMBER: 5/32
+Initializing distributed: GLOBAL_RANK: 31, MEMBER: 32/32
+[W222 13:56:36.664886030 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+[W222 13:56:36.198730563 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 29, MEMBER: 30/32
+[W222 13:56:36.224340018 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 8, MEMBER: 9/32
+[W222 13:56:37.095523050 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 18, MEMBER: 19/32
+[W222 13:56:37.938718427 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 30, MEMBER: 31/32
+[W222 13:56:37.636394151 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 2, MEMBER: 3/32
+[W222 13:56:37.327409307 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 25, MEMBER: 26/32
+[W222 13:56:37.971420045 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 14, MEMBER: 15/32
+[W222 13:56:37.683723612 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 21, MEMBER: 22/32
+[W222 13:56:37.513062994 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 9, MEMBER: 10/32
+[W222 13:56:37.904391226 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 10, MEMBER: 11/32
+[W222 13:56:38.966305182 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 19, MEMBER: 20/32
+[W222 13:56:38.811088603 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 3, MEMBER: 4/32
+[W222 13:56:38.024189916 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 1, MEMBER: 2/32
+[W222 13:56:38.094971858 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 5, MEMBER: 6/32
+[W222 13:56:38.120325060 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 6, MEMBER: 7/32
+[W222 13:56:38.402218810 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+[W222 13:56:38.408874506 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 32 processes
+----------------------------------------------------------------------------------------------------
+
+[2025-02-22 13:56:39.052: I torch/sagemaker/state_handler.py:223] Sizes (pp, rep, sdp, tp, ep, cp, world) = (1, None, 8, 2, 1, 1, 32).
+NCCL version 2.21.5+cuda12.1
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+[2025-02-22 13:56:40.817: I hyperpod_nemo_adapter/collections/model/sagemaker_base_model.py:132] Overriding model config with {'vocab_size': 128256, 'hidden_size': 2048, 'intermediate_size': 8192, 'num_hidden_layers': 16, 'num_attention_heads': 32, 'max_position_embeddings': 8192, 'initializer_range': 0.02, 'num_key_value_heads': 8, 'rms_norm_eps': 1e-05, 'rope_theta': 500000.0, 'delayed_param': True, 'rope_scaling': {'rope_type': 'llama3', 'factor': 32.0, 'high_freq_factor': 4.0, 'low_freq_factor': 1.0, 'original_max_position_embeddings': 8192}}
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+NCCL version 2.21.5+cuda12.1
+[2025-02-22 13:56:41.671: I torch/sagemaker/tensor_parallel/parallelize.py:82] Created transformed model
+LOCAL_RANK: 5 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 3 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 7 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 6 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 4 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 1 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 6 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 7 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 6 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 4 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 2 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 2 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 4 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 5 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 5 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 1 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 2 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 4 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 3 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 7 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 5 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 1 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 2 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 3 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 3 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 7 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 1 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 6 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+[NeMo I 2025-02-22 13:56:41 nemo_logging:381] Using FSDP plugin with auto_wrap_policy: functools.partial(<function transformer_auto_wrap_policy at 0x7fe17906b7e0>, transformer_layer_cls=(<class 'torch.sagemaker.tensor_parallel.transformer.TransformerLayer'>,))
+[2025-02-22 13:56:41.989: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.989: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.989: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.989: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.989: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.989: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.989: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.990: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.990: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.990: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.990: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.990: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.990: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.990: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.990: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.990: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.990: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.990: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.990: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.990: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.991: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.991: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.990: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.991: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.991: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.991: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.991: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.991: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.992: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.992: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.993: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:41.993: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [16, 18, 20, 22, 24, 26, 28, 30], [17, 19, 21, 23, 25, 27, 29, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.000: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0, 16], [1, 17], [2, 18], [3, 19], [4, 20], [5, 21], [6, 22], [7, 23], [8, 24], [9, 25], [10, 26], [11, 27], [12, 28], [13, 29], [14, 30], [15, 31]]`.
+[2025-02-22 13:56:42.136: I torch/sagemaker/utils/utils.py:52] [ 0] Runtime is     0.1496 seconds: FSDP constructor.
+[NeMo I 2025-02-22 13:56:42 nemo_logging:381] Optimizer config = AdamW (
+    Parameter Group 0
+        amsgrad: False
+        betas: [0.9, 0.95]
+        capturable: False
+        differentiable: False
+        eps: 1e-08
+        foreach: None
+        fused: None
+        lr: 0.0001
+        maximize: False
+        weight_decay: 0.01
+    )
+[NeMo I 2025-02-22 13:56:42 nemo_logging:381] Scheduler "<nemo.core.optim.lr_scheduler.CosineAnnealing object at 0x7fe09c705190>" 
+    will be used during training (effective maximum steps = 50) - 
+    Parameters : 
+    (warmup_steps: 0
+    constant_steps: 0
+    min_lr: 1.0e-06
+    max_steps: 50
+    )
+[NeMo I 2025-02-22 13:56:42 nemo_logging:381] Training Model:
+    FullyShardedDataParallel(
+      (_fsdp_wrapped_module): TransformerLMHead(
+        (word_embedding): DistributedEmbedding(64128, 2048)
+        (dropout): Dropout(p=0.0, inplace=False)
+        (transformer): Transformer(
+          (seq_layers): ModuleList(
+            (0-15): 16 x FullyShardedDataParallel(
+              (_fsdp_wrapped_module): TransformerLayer(
+                (layer): TransformerLayer(
+                  (self_attention): MultiheadAttention(
+                    (layernorm_qkv): LayerNormLinear()
+                    (core_attention): DotProductAttention(
+                      (flash_attention): FlashAttention()
+                      (fused_attention): FusedAttention()
+                      (unfused_attention): UnfusedDotProductAttention(
+                        (scale_mask_softmax): FusedScaleMaskSoftmax()
+                        (attention_dropout): Dropout(p=0.0, inplace=False)
+                      )
+                    )
+                    (proj): Linear()
+                  )
+                  (layernorm_mlp): LayerNormMLP()
+                )
+                (rotary): PatchedRotaryPositionEmbedding()
+              )
+            )
+          )
+        )
+        (layernorm): RMSNorm()
+        (ce_loss): DistributedCrossEntropy()
+        (lm_head): Linear(in_features=2048, out_features=64128, bias=False)
+      )
+    )
+
+  | Name  | Type                     | Params | Mode 
+-----------------------------------------------------------
+0 | model | FullyShardedDataParallel | 93.7 M | train
+-----------------------------------------------------------
+93.7 M    Trainable params
+0         Non-trainable params
+93.7 M    Total params
+374.638   Total estimated model params size (MB)
+[NeMo W 2025-02-22 13:56:43 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:424: The 'train_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=2` in the `DataLoader` to improve performance.
+    
+[NeMo W 2025-02-22 13:56:48 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/distributed/c10d_logger.py:79: FutureWarning: `torch.distributed._all_gather_base` is a private function and will be deprecated. Please use `torch.distributed.all_gather_into_tensor` instead.
+      return func(*args, **kwargs)
+    
+[NeMo W 2025-02-22 13:56:51 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/nemo/core/optim/lr_scheduler.py:284: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+      warnings.warn(
+    
+Training: |          | 0/? [00:00<?, ?it/s]Training:   0%|          | 0/3125 [00:00<?, ?it/s]Epoch 0:   0%|          | 0/3125 [00:00<?, ?it/s] Epoch 0:   0%|          | 1/3125 [00:08<7:12:42,  0.12it/s]Epoch 0:   0%|          | 1/3125 [00:08<7:12:44,  0.12it/s, v_num=6-30][2025-02-22 13:56:51.888: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   0%|          | 2/3125 [00:14<6:12:32,  0.14it/s, v_num=6-30]Epoch 0:   0%|          | 2/3125 [00:14<6:12:55,  0.14it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.670, LR/learning_rate=9.99e-5][2025-02-22 13:56:57.418: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   0%|          | 3/3125 [00:19<5:44:57,  0.15it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.670, LR/learning_rate=9.99e-5]Epoch 0:   0%|          | 3/3125 [00:19<5:45:13,  0.15it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.640, LR/learning_rate=9.96e-5][2025-02-22 13:57:03.002: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   0%|          | 4/3125 [00:25<5:33:31,  0.16it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.640, LR/learning_rate=9.96e-5]Epoch 0:   0%|          | 4/3125 [00:25<5:33:43,  0.16it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.540, LR/learning_rate=9.91e-5][2025-02-22 13:57:08.783: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   0%|          | 5/3125 [00:31<5:25:44,  0.16it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.540, LR/learning_rate=9.91e-5]Epoch 0:   0%|          | 5/3125 [00:31<5:25:54,  0.16it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.540, LR/learning_rate=9.84e-5][2025-02-22 13:57:14.434: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   0%|          | 6/3125 [00:36<5:20:18,  0.16it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.540, LR/learning_rate=9.84e-5]Epoch 0:   0%|          | 6/3125 [00:36<5:20:25,  0.16it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.570, LR/learning_rate=9.76e-5][2025-02-22 13:57:20.095: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   0%|          | 7/3125 [00:42<5:16:19,  0.16it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.570, LR/learning_rate=9.76e-5]Epoch 0:   0%|          | 7/3125 [00:42<5:16:25,  0.16it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.500, LR/learning_rate=9.65e-5][2025-02-22 13:57:25.721: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   0%|          | 8/3125 [00:49<5:23:31,  0.16it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.500, LR/learning_rate=9.65e-5]Epoch 0:   0%|          | 8/3125 [00:49<5:23:37,  0.16it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.470, LR/learning_rate=9.53e-5][2025-02-22 13:57:32.943: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   0%|          | 9/3125 [00:55<5:19:52,  0.16it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.470, LR/learning_rate=9.53e-5]Epoch 0:   0%|          | 9/3125 [00:55<5:19:57,  0.16it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.510, LR/learning_rate=9.39e-5][2025-02-22 13:57:38.544: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   0%|          | 10/3125 [01:01<5:21:09,  0.16it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.510, LR/learning_rate=9.39e-5]Epoch 0:   0%|          | 10/3125 [01:01<5:21:13,  0.16it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.520, LR/learning_rate=9.23e-5][2025-02-22 13:57:44.983: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   0%|          | 11/3125 [01:07<5:18:38,  0.16it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.520, LR/learning_rate=9.23e-5]Epoch 0:   0%|          | 11/3125 [01:07<5:18:42,  0.16it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.490, LR/learning_rate=9.05e-5][2025-02-22 13:57:50.652: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   0%|          | 12/3125 [01:13<5:16:41,  0.16it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.490, LR/learning_rate=9.05e-5]Epoch 0:   0%|          | 12/3125 [01:13<5:16:45,  0.16it/s, v_num=6-30, Loss/train=12.10, Norms/grad_norm=3.550, LR/learning_rate=8.86e-5][2025-02-22 13:57:56.396: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   0%|          | 13/3125 [01:18<5:14:49,  0.16it/s, v_num=6-30, Loss/train=12.10, Norms/grad_norm=3.550, LR/learning_rate=8.86e-5]Epoch 0:   0%|          | 13/3125 [01:18<5:14:53,  0.16it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.450, LR/learning_rate=8.66e-5][2025-02-22 13:58:02.021: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   0%|          | 14/3125 [01:24<5:13:10,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.450, LR/learning_rate=8.66e-5]Epoch 0:   0%|          | 14/3125 [01:24<5:13:13,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.460, LR/learning_rate=8.44e-5][2025-02-22 13:58:07.696: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   0%|          | 15/3125 [01:30<5:11:43,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.460, LR/learning_rate=8.44e-5]Epoch 0:   0%|          | 15/3125 [01:30<5:11:46,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.580, LR/learning_rate=8.21e-5][2025-02-22 13:58:13.323: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|          | 16/3125 [01:35<5:10:23,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.580, LR/learning_rate=8.21e-5]Epoch 0:   1%|          | 16/3125 [01:35<5:10:26,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.480, LR/learning_rate=7.96e-5][2025-02-22 13:58:18.959: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|          | 17/3125 [01:41<5:09:08,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.480, LR/learning_rate=7.96e-5]Epoch 0:   1%|          | 17/3125 [01:41<5:09:11,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.460, LR/learning_rate=7.7e-5] [2025-02-22 13:58:24.566: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|          | 18/3125 [01:47<5:08:27,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.460, LR/learning_rate=7.7e-5]Epoch 0:   1%|          | 18/3125 [01:47<5:08:30,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.560, LR/learning_rate=7.43e-5][2025-02-22 13:58:30.339: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|          | 19/3125 [01:53<5:07:55,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.560, LR/learning_rate=7.43e-5]Epoch 0:   1%|          | 19/3125 [01:53<5:07:58,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.500, LR/learning_rate=7.16e-5][2025-02-22 13:58:36.140: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|          | 20/3125 [01:58<5:07:00,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.500, LR/learning_rate=7.16e-5]Epoch 0:   1%|          | 20/3125 [01:58<5:07:03,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.590, LR/learning_rate=6.87e-5][2025-02-22 13:58:41.768: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|          | 21/3125 [02:04<5:06:11,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.590, LR/learning_rate=6.87e-5]Epoch 0:   1%|          | 21/3125 [02:04<5:06:13,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.530, LR/learning_rate=6.58e-5][2025-02-22 13:58:47.402: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|          | 22/3125 [02:09<5:05:29,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.530, LR/learning_rate=6.58e-5]Epoch 0:   1%|          | 22/3125 [02:09<5:05:31,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.480, LR/learning_rate=6.28e-5][2025-02-22 13:58:53.072: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|          | 23/3125 [02:15<5:04:49,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.480, LR/learning_rate=6.28e-5]Epoch 0:   1%|          | 23/3125 [02:15<5:04:51,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.480, LR/learning_rate=5.98e-5][2025-02-22 13:58:58.720: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|          | 24/3125 [02:22<5:05:58,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.480, LR/learning_rate=5.98e-5]Epoch 0:   1%|          | 24/3125 [02:22<5:06:00,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.460, LR/learning_rate=5.67e-5][2025-02-22 13:59:05.205: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|          | 25/3125 [02:27<5:05:19,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.460, LR/learning_rate=5.67e-5]Epoch 0:   1%|          | 25/3125 [02:27<5:05:21,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.440, LR/learning_rate=5.36e-5][2025-02-22 13:59:10.852: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|          | 26/3125 [02:33<5:04:40,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.440, LR/learning_rate=5.36e-5]Epoch 0:   1%|          | 26/3125 [02:33<5:04:42,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.360, LR/learning_rate=5.05e-5][2025-02-22 13:59:16.489: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|          | 27/3125 [02:39<5:04:05,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.360, LR/learning_rate=5.05e-5]Epoch 0:   1%|          | 27/3125 [02:39<5:04:07,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.500, LR/learning_rate=4.74e-5][2025-02-22 13:59:22.127: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|          | 28/3125 [02:44<5:03:32,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.500, LR/learning_rate=4.74e-5]Epoch 0:   1%|          | 28/3125 [02:44<5:03:33,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.400, LR/learning_rate=4.43e-5][2025-02-22 13:59:27.782: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|          | 29/3125 [02:50<5:03:03,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.400, LR/learning_rate=4.43e-5]Epoch 0:   1%|          | 29/3125 [02:50<5:03:04,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.500, LR/learning_rate=4.12e-5][2025-02-22 13:59:33.433: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|          | 30/3125 [02:55<5:02:35,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.500, LR/learning_rate=4.12e-5]Epoch 0:   1%|          | 30/3125 [02:55<5:02:37,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.410, LR/learning_rate=3.82e-5][2025-02-22 13:59:39.100: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|          | 31/3125 [03:01<5:02:11,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.410, LR/learning_rate=3.82e-5]Epoch 0:   1%|          | 31/3125 [03:01<5:02:12,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.460, LR/learning_rate=3.52e-5][2025-02-22 13:59:44.774: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|          | 32/3125 [03:07<5:01:48,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.460, LR/learning_rate=3.52e-5]Epoch 0:   1%|          | 32/3125 [03:07<5:01:49,  0.17it/s, v_num=6-30, Loss/train=12.10, Norms/grad_norm=3.500, LR/learning_rate=3.23e-5][2025-02-22 13:59:50.463: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|          | 33/3125 [03:13<5:01:29,  0.17it/s, v_num=6-30, Loss/train=12.10, Norms/grad_norm=3.500, LR/learning_rate=3.23e-5]Epoch 0:   1%|          | 33/3125 [03:13<5:01:31,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.470, LR/learning_rate=2.94e-5][2025-02-22 13:59:56.185: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|          | 34/3125 [03:18<5:01:10,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.470, LR/learning_rate=2.94e-5]Epoch 0:   1%|          | 34/3125 [03:18<5:01:11,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.430, LR/learning_rate=2.67e-5][2025-02-22 14:00:01.879: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|          | 35/3125 [03:24<5:01:03,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.430, LR/learning_rate=2.67e-5]Epoch 0:   1%|          | 35/3125 [03:24<5:01:04,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.410, LR/learning_rate=2.4e-5] [2025-02-22 14:00:07.712: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|          | 36/3125 [03:30<5:00:47,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.410, LR/learning_rate=2.4e-5]Epoch 0:   1%|          | 36/3125 [03:30<5:00:48,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.410, LR/learning_rate=2.14e-5][2025-02-22 14:00:13.487: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|          | 37/3125 [03:36<5:00:31,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.410, LR/learning_rate=2.14e-5]Epoch 0:   1%|          | 37/3125 [03:36<5:00:32,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.370, LR/learning_rate=1.89e-5][2025-02-22 14:00:19.158: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|          | 38/3125 [03:41<5:00:10,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.370, LR/learning_rate=1.89e-5]Epoch 0:   1%|          | 38/3125 [03:41<5:00:12,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.430, LR/learning_rate=1.66e-5][2025-02-22 14:00:24.824: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|          | 39/3125 [03:47<4:59:51,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.430, LR/learning_rate=1.66e-5]Epoch 0:   1%|          | 39/3125 [03:47<4:59:52,  0.17it/s, v_num=6-30, Loss/train=12.10, Norms/grad_norm=3.390, LR/learning_rate=1.44e-5][2025-02-22 14:00:30.479: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|▏         | 40/3125 [03:53<4:59:31,  0.17it/s, v_num=6-30, Loss/train=12.10, Norms/grad_norm=3.390, LR/learning_rate=1.44e-5]Epoch 0:   1%|▏         | 40/3125 [03:53<4:59:32,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.510, LR/learning_rate=1.24e-5][2025-02-22 14:00:36.133: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|▏         | 41/3125 [03:58<4:59:14,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.510, LR/learning_rate=1.24e-5]Epoch 0:   1%|▏         | 41/3125 [03:58<4:59:15,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.450, LR/learning_rate=1.05e-5][2025-02-22 14:00:41.810: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|▏         | 42/3125 [04:04<4:58:58,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.450, LR/learning_rate=1.05e-5]Epoch 0:   1%|▏         | 42/3125 [04:04<4:58:59,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.370, LR/learning_rate=8.71e-6][2025-02-22 14:00:47.488: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|▏         | 43/3125 [04:10<4:58:49,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.370, LR/learning_rate=8.71e-6]Epoch 0:   1%|▏         | 43/3125 [04:10<4:58:50,  0.17it/s, v_num=6-30, Loss/train=12.10, Norms/grad_norm=3.420, LR/learning_rate=7.12e-6][2025-02-22 14:00:53.258: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|▏         | 44/3125 [04:15<4:58:34,  0.17it/s, v_num=6-30, Loss/train=12.10, Norms/grad_norm=3.420, LR/learning_rate=7.12e-6]Epoch 0:   1%|▏         | 44/3125 [04:15<4:58:35,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.430, LR/learning_rate=5.71e-6][2025-02-22 14:00:58.951: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|▏         | 45/3125 [04:21<4:58:19,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.430, LR/learning_rate=5.71e-6]Epoch 0:   1%|▏         | 45/3125 [04:21<4:58:20,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.370, LR/learning_rate=4.48e-6][2025-02-22 14:01:04.632: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   1%|▏         | 46/3125 [04:27<4:58:06,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.370, LR/learning_rate=4.48e-6]Epoch 0:   1%|▏         | 46/3125 [04:27<4:58:07,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.510, LR/learning_rate=3.42e-6][2025-02-22 14:01:10.341: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   2%|▏         | 47/3125 [04:32<4:57:55,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.510, LR/learning_rate=3.42e-6]Epoch 0:   2%|▏         | 47/3125 [04:32<4:57:56,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.400, LR/learning_rate=2.56e-6][2025-02-22 14:01:16.065: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   2%|▏         | 48/3125 [04:38<4:57:42,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.400, LR/learning_rate=2.56e-6]Epoch 0:   2%|▏         | 48/3125 [04:38<4:57:43,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.380, LR/learning_rate=1.88e-6][2025-02-22 14:01:21.765: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+Epoch 0:   2%|▏         | 49/3125 [04:44<4:57:30,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.380, LR/learning_rate=1.88e-6]Epoch 0:   2%|▏         | 49/3125 [04:44<4:57:30,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.470, LR/learning_rate=1.39e-6][2025-02-22 14:01:27.458: W torch/sagemaker/distributed/fsdp/fully_sharded_data_parallel.py:38] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding torch.cuda.empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time which also has a performance hit but generally smaller than when all ranks do it at different times.
+[NeMo W 2025-02-22 14:01:33 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py:700: FutureWarning: FSDP.state_dict_type() and FSDP.set_state_dict_type() are being deprecated. Please use APIs, get_state_dict() and set_state_dict(), which can support different parallelisms, FSDP1, FSDP2, DDP. API doc: https://pytorch.org/docs/stable/distributed.checkpoint.html#torch.distributed.checkpoint.state_dict.get_state_dict .Tutorial: https://pytorch.org/tutorials/recipes/distributed_checkpoint_recipe.html .
+      warnings.warn(
+    
+Epoch 0:   2%|▏         | 50/3125 [04:49<4:57:14,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.470, LR/learning_rate=1.39e-6]Epoch 0:   2%|▏         | 50/3125 [04:50<4:57:15,  0.17it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.260, LR/learning_rate=1.1e-6] [2025-02-22 14:01:37.142: I torch/sagemaker/tensor_parallel/transform_policy.py:152] Gathering tensor parallel shards of parameters to merge them for full state dict
+[2025-02-22 14:02:22.605: I torch/sagemaker/tensor_parallel/transform_policy.py:160] Finished gathering tensor parallel shards of parameters
+[NeMo I 2025-02-22 14:02:26 nemo_logging:381] save SageMakerCheckpointType.FULL checkpoint: /checkpoints/full/steps_50
+`Trainer.fit` stopped: `max_steps=50` reached.
+Epoch 0:   2%|▏         | 50/3125 [05:56<6:05:05,  0.14it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.430, LR/learning_rate=1e-6]  Epoch 0:   2%|▏         | 50/3125 [05:56<6:05:05,  0.14it/s, v_num=6-30, Loss/train=12.20, Norms/grad_norm=3.430, LR/learning_rate=1e-6]

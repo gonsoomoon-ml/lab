@@ -1,0 +1,1737 @@
++ export NCCL_DEBUG=WARN
++ NCCL_DEBUG=WARN
++ DISTRIBUTED_ARGS='--nproc_per_node 8'
+++ hostname
++ LAUNCHER_HOSTNAME=ip-10-1-24-129
++ mkdir -p /fsx/ubuntu/tmp
++ GIT_CLONE_DIR=/fsx/ubuntu/tmp/ip-10-1-24-129
++ [[ -d /fsx/ubuntu/tmp/ip-10-1-24-129 ]]
++ git clone https://github.com/aws/sagemaker-hyperpod-training-adapter-for-nemo.git /fsx/ubuntu/tmp/ip-10-1-24-129
+Cloning into '/fsx/ubuntu/tmp/ip-10-1-24-129'...
++ GIT_CLONE_DIR=/fsx/ubuntu/tmp/ip-10-1-24-129/
++ cd /fsx/ubuntu/tmp/ip-10-1-24-129/
++ rm -rf __pycache__
++ unset SLURM_NTASKS
++ torchrun --nproc_per_node 8 examples/llama/llama_pretrain.py --config-path=/fsx/ubuntu/sagemaker-hyperpod-recipes/results/hf-llama3-2-1b --config-name=hf-llama3-2-1b_hydra.yaml
+W0222 13:35:13.947000 140251169281280 torch/distributed/run.py:779] 
+W0222 13:35:13.947000 140251169281280 torch/distributed/run.py:779] *****************************************
+W0222 13:35:13.947000 140251169281280 torch/distributed/run.py:779] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0222 13:35:13.947000 140251169281280 torch/distributed/run.py:779] *****************************************
+[2025-02-22 13:35:18.233: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:35:18.246: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[NeMo W 2025-02-22 13:35:18 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:473: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+[NeMo W 2025-02-22 13:35:18 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:497: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      @custom_bwd
+    
+[NeMo W 2025-02-22 13:35:18 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:521: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+[NeMo W 2025-02-22 13:35:18 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:527: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      @custom_bwd
+    
+[NeMo W 2025-02-22 13:35:18 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:536: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+[NeMo W 2025-02-22 13:35:18 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:542: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      @custom_bwd
+    
+[NeMo W 2025-02-22 13:35:18 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:549: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+[NeMo W 2025-02-22 13:35:18 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:558: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      @custom_bwd
+    
+[NeMo W 2025-02-22 13:35:18 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:565: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+[NeMo W 2025-02-22 13:35:18 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:570: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      @custom_bwd
+    
+[NeMo W 2025-02-22 13:35:18 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:581: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+[NeMo W 2025-02-22 13:35:18 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:600: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      @custom_bwd
+    
+[2025-02-22 13:35:18.254: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:35:18.256: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:35:18.265: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:35:18.292: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:35:18.301: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 13:35:18.345: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[NeMo W 2025-02-22 13:35:29 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/megatron/core/tensor_parallel/layers.py:278: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+[NeMo W 2025-02-22 13:35:29 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/megatron/core/tensor_parallel/layers.py:294: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      @custom_bwd
+    
+[NeMo W 2025-02-22 13:35:29 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/megatron/core/tensor_parallel/layers.py:389: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+[NeMo W 2025-02-22 13:35:29 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/megatron/core/tensor_parallel/layers.py:428: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      @custom_bwd
+    
+[NeMo W 2025-02-22 13:35:29 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/embedding.py:193: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+[NeMo W 2025-02-22 13:35:29 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/embedding.py:258: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+[NeMo W 2025-02-22 13:35:31 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/megatron/core/dist_checkpointing/strategies/torch.py:22: DeprecationWarning: `torch.distributed._sharded_tensor` will be deprecated, use `torch.distributed._shard.sharded_tensor` instead
+      from torch.distributed._sharded_tensor import ShardedTensor as TorchShardedTensor
+    
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+[NeMo W 2025-02-22 13:35:31 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/megatron/core/models/gpt/gpt_layer_specs.py:41: UserWarning: Apex is not installed. Falling back to Torch LayerNorm
+      warnings.warn(f'Apex is not installed. Falling back to Torch LayerNorm')
+    
+[NeMo W 2025-02-22 13:35:31 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/megatron/core/models/retro/encoder_spec.py:47: UserWarning: Apex is not installed. Falling back to Torch LayerNorm
+      warnings.warn(f'Apex is not installed. Falling back to Torch LayerNorm')
+    
+[NeMo W 2025-02-22 13:35:31 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/megatron/core/models/retro/decoder_spec.py:39: UserWarning: Apex is not installed. Falling back to Torch LayerNorm
+      warnings.warn(f'Apex is not installed. Falling back to Torch LayerNorm')
+    
+[NeMo W 2025-02-22 13:35:31 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/megatron/core/models/T5/t5_spec.py:46: UserWarning: Apex is not installed. Falling back to Torch LayerNorm
+      warnings.warn(f'Apex is not installed. Falling back to Torch LayerNorm')
+    
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+[NeMo I 2025-02-22 13:35:36 nemo_logging:381] 
+    
+    ************** Experiment configuration ***********
+[NeMo I 2025-02-22 13:35:36 nemo_logging:381] 
+    name:
+    - hf_llama_8b
+    use_smp_model: true
+    distributed_backend: nccl
+    log_perf_metrics: false
+    model:
+      model_type: llama_v3
+      train_batch_size: 2
+      val_batch_size: 1
+      fsdp: true
+      moe: false
+      activation_checkpointing: false
+      activation_loading_horizon: 1
+      delayed_param: true
+      offload_activations: false
+      seed: 12345
+      grad_clip: 1.0
+      sharding_strategy: hybrid_shard
+      forward_prefetch: true
+      shard_degree: 8
+      backward_fetch_policy: backward_pre
+      auto_wrap_policy: transformer_auto_wrap_policy
+      limit_all_gathers: false
+      use_orig_param: true
+      context_parallel_degree: 1
+      tensor_model_parallel_degree: 1
+      expert_model_parallel_degree: 1
+      max_context_width: 8192
+      max_position_embeddings: 8192
+      num_hidden_layers: 16
+      hidden_size: 2048
+      num_attention_heads: 32
+      intermediate_size: 8192
+      initializer_range: 0.02
+      layernorm_epsilon: 1.0e-05
+      vocab_size: 128256
+      num_key_value_heads: 8
+      use_flash_attention: true
+      sliding_window: null
+      use_sliding_window: null
+      max_window_layers: null
+      rms_norm_eps: null
+      rope_theta: 500000.0
+      multi_modal: false
+      tie_word_embeddings: true
+      num_experts_per_tok: null
+      num_local_experts: null
+      moe_load_balancing: sinkhorn
+      global_token_shuffle: null
+      moe_all_to_all_dispatcher: null
+      fp8: false
+      fp8_amax_history_len: 1024
+      fp8_amax_compute_algo: max
+      do_finetune: false
+      hf_model_name_or_path: null
+      hf_access_token: null
+      precision: bf16
+      lr_decay_iters: 50
+      log_reduced_training_loss: true
+      optim:
+        name: adamw
+        lr: 0.0001
+        weight_decay: 0.01
+        betas:
+        - 0.9
+        - 0.95
+        sched:
+          name: CosineAnnealing
+          warmup_steps: 0
+          constant_steps: 0
+          min_lr: 1.0e-06
+      data:
+        train_dir: ''
+        val_dir: ''
+        dataset_type: hf
+        use_synthetic_data: true
+      gpu_affinity:
+        enabled: true
+      nsys_profile:
+        enabled: false
+        start_step: 10
+        end_step: 10
+        ranks:
+        - 0
+        gen_shape: false
+      viztracer:
+        enabled: false
+        ranks:
+        - 0
+        tracer_entries: 1000000
+        verbose: 1
+        max_stack_depth: -1
+        ignore_c_function: true
+        ignore_frozen: true
+        log_func_retval: false
+        log_func_args: false
+        log_print: false
+        log_gc: false
+        log_sparse: false
+        log_async: false
+        log_audit: null
+        pid_suffix: false
+        file_info: true
+        register_global: true
+        trace_self: false
+        min_duration: 200
+        minimize_memory: false
+        dump_raw: false
+        sanitize_function_name: false
+        output_file: null
+      peft:
+        peft_type: null
+        rank: 32
+        alpha: 16.0
+        dropout: 0.1
+        target_modules: null
+      rope_scaling:
+        rope_type: llama3
+        factor: 32.0
+        high_freq_factor: 4.0
+        low_freq_factor: 1.0
+        original_max_position_embeddings: 8192
+      nvte_attn_backend: null
+    trainer:
+      devices: 8
+      num_nodes: 1
+      accelerator: gpu
+      precision: bf16
+      max_steps: 50
+      log_every_n_steps: 1
+      val_check_interval: 1
+      limit_val_batches: 0
+    exp_manager:
+      exp_dir: ''
+      name: experiment
+      explicit_log_dir: null
+      create_tensorboard_logger: true
+      create_checkpoint_callback: true
+      checkpoint_callback_params:
+        save_top_k: 0
+        every_n_train_steps: 10
+        monitor: step
+        mode: max
+        save_last: false
+      export_full_model:
+        every_n_train_steps: 0
+        save_last: true
+        final_export_dir: null
+      checkpoint_dir: /checkpoints/
+      resume_from_checkpoint: null
+      auto_checkpoint:
+        enabled: false
+        warmup_steps: 12
+        drop_n_warmup_steps: 3
+    run:
+      name: hf-llama3-2-1b
+      results_dir: /fsx/ubuntu/sagemaker-hyperpod-recipes/results/hf-llama3-2-1b
+      time_limit: 6-00:00:00
+    
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+`Trainer(val_check_interval=1)` was configured so validation will run after every batch.
+[NeMo I 2025-02-22 13:35:36 nemo_logging:381] Experiments will be logged at experiment/2025-02-22_13-35-36
+[NeMo I 2025-02-22 13:35:36 nemo_logging:381] TensorboardLogger has been set up
+You are using a CUDA device ('NVIDIA A10G') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+Initializing distributed: GLOBAL_RANK: 0, MEMBER: 1/8
+[W222 13:35:36.800947051 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 8 processes
+----------------------------------------------------------------------------------------------------
+
+[2025-02-22 13:35:37.089: I torch/sagemaker/state_handler.py:223] Sizes (pp, rep, sdp, tp, ep, cp, world) = (1, None, 8, 1, 1, 1, 8).
+Initializing distributed: GLOBAL_RANK: 6, MEMBER: 7/8
+[W222 13:35:41.783185945 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 7, MEMBER: 8/8
+[W222 13:35:42.770662816 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 4, MEMBER: 5/8
+[W222 13:35:43.838429582 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 5, MEMBER: 6/8
+[W222 13:35:43.849890257 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 1, MEMBER: 2/8
+[W222 13:35:43.855837594 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 3, MEMBER: 4/8
+[W222 13:35:46.159805262 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Initializing distributed: GLOBAL_RANK: 2, MEMBER: 3/8
+[W222 13:35:46.171282098 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+NCCL version 2.21.5+cuda12.1
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+[2025-02-22 13:35:48.735: I hyperpod_nemo_adapter/collections/model/sagemaker_base_model.py:132] Overriding model config with {'vocab_size': 128256, 'hidden_size': 2048, 'intermediate_size': 8192, 'num_hidden_layers': 16, 'num_attention_heads': 32, 'max_position_embeddings': 8192, 'initializer_range': 0.02, 'num_key_value_heads': 8, 'rms_norm_eps': 1e-05, 'rope_theta': 500000.0, 'delayed_param': True, 'rope_scaling': {'rope_type': 'llama3', 'factor': 32.0, 'high_freq_factor': 4.0, 'low_freq_factor': 1.0, 'original_max_position_embeddings': 8192}}
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+`rope_scaling`'s original_max_position_embeddings field must be less than max_position_embeddings, got 8192 and max_position_embeddings=8192
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in LlamaModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+[2025-02-22 13:35:49.004: I torch/sagemaker/tensor_parallel/parallelize.py:82] Created transformed model
+LOCAL_RANK: 4 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 3 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 7 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 5 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 1 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 6 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 2 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+[NeMo I 2025-02-22 13:35:49 nemo_logging:381] Using FSDP plugin with auto_wrap_policy: functools.partial(<function transformer_auto_wrap_policy at 0x7f1597b4b7e0>, transformer_layer_cls=(<class 'torch.sagemaker.tensor_parallel.transformer.TransformerLayer'>,))
+[2025-02-22 13:35:49.017: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 1, 2, 3, 4, 5, 6, 7]]`.
+[2025-02-22 13:35:49.017: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 1, 2, 3, 4, 5, 6, 7]]`.
+[2025-02-22 13:35:49.017: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 1, 2, 3, 4, 5, 6, 7]]`.
+[2025-02-22 13:35:49.017: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 1, 2, 3, 4, 5, 6, 7]]`.
+[2025-02-22 13:35:49.017: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0], [1], [2], [3], [4], [5], [6], [7]]`.
+[2025-02-22 13:35:49.018: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0], [1], [2], [3], [4], [5], [6], [7]]`.
+[2025-02-22 13:35:49.017: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 1, 2, 3, 4, 5, 6, 7]]`.
+[2025-02-22 13:35:49.018: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0], [1], [2], [3], [4], [5], [6], [7]]`.
+[2025-02-22 13:35:49.018: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0], [1], [2], [3], [4], [5], [6], [7]]`.
+[2025-02-22 13:35:49.018: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0], [1], [2], [3], [4], [5], [6], [7]]`.
+[2025-02-22 13:35:49.019: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 1, 2, 3, 4, 5, 6, 7]]`.
+[2025-02-22 13:35:49.019: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 1, 2, 3, 4, 5, 6, 7]]`.
+[2025-02-22 13:35:49.019: I torch/sagemaker/utils/process_group_utils.py:107] Shard groups: `[[0, 1, 2, 3, 4, 5, 6, 7]]`.
+[2025-02-22 13:35:49.020: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0], [1], [2], [3], [4], [5], [6], [7]]`.
+[2025-02-22 13:35:49.020: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0], [1], [2], [3], [4], [5], [6], [7]]`.
+[2025-02-22 13:35:49.020: I torch/sagemaker/utils/process_group_utils.py:100] Repli groups: `[[0], [1], [2], [3], [4], [5], [6], [7]]`.
+[2025-02-22 13:35:49.123: I torch/sagemaker/utils/utils.py:52] [ 0] Runtime is      0.107 seconds: FSDP constructor.
+[NeMo I 2025-02-22 13:35:49 nemo_logging:381] Optimizer config = AdamW (
+    Parameter Group 0
+        amsgrad: False
+        betas: [0.9, 0.95]
+        capturable: False
+        differentiable: False
+        eps: 1e-08
+        foreach: None
+        fused: None
+        lr: 0.0001
+        maximize: False
+        weight_decay: 0.01
+    )
+[NeMo I 2025-02-22 13:35:49 nemo_logging:381] Scheduler "<nemo.core.optim.lr_scheduler.CosineAnnealing object at 0x7f14ec708790>" 
+    will be used during training (effective maximum steps = 50) - 
+    Parameters : 
+    (warmup_steps: 0
+    constant_steps: 0
+    min_lr: 1.0e-06
+    max_steps: 50
+    )
+[NeMo I 2025-02-22 13:35:49 nemo_logging:381] Training Model:
+    FullyShardedDataParallel(
+      (_fsdp_wrapped_module): TransformerLMHead(
+        (word_embedding): DistributedEmbedding(128256, 2048)
+        (dropout): Dropout(p=0.0, inplace=False)
+        (transformer): Transformer(
+          (seq_layers): ModuleList(
+            (0-15): 16 x FullyShardedDataParallel(
+              (_fsdp_wrapped_module): TransformerLayer(
+                (layer): TransformerLayer(
+                  (self_attention): MultiheadAttention(
+                    (layernorm_qkv): LayerNormLinear()
+                    (core_attention): DotProductAttention(
+                      (flash_attention): FlashAttention()
+                      (fused_attention): FusedAttention()
+                      (unfused_attention): UnfusedDotProductAttention(
+                        (scale_mask_softmax): FusedScaleMaskSoftmax()
+                        (attention_dropout): Dropout(p=0.0, inplace=False)
+                      )
+                    )
+                    (proj): Linear()
+                  )
+                  (layernorm_mlp): LayerNormMLP()
+                )
+                (rotary): PatchedRotaryPositionEmbedding()
+              )
+            )
+          )
+        )
+        (layernorm): RMSNorm()
+        (ce_loss): DistributedCrossEntropy()
+        (lm_head): Linear(in_features=2048, out_features=128256, bias=False)
+      )
+    )
+
+  | Name  | Type                     | Params | Mode 
+-----------------------------------------------------------
+0 | model | FullyShardedDataParallel | 187 M  | train
+-----------------------------------------------------------
+187 M     Trainable params
+0         Non-trainable params
+187 M     Total params
+749.241   Total estimated model params size (MB)
+[NeMo W 2025-02-22 13:35:49 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:424: The 'train_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=2` in the `DataLoader` to improve performance.
+    
+Error executing job with overrides: []
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/fsx/ubuntu/tmp/ip-10-1-24-129/examples/llama/llama_pretrain.py", line 43, in <module>
+[rank1]:     main()
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/hydra/main.py", line 94, in decorated_main
+[rank1]:     _run_hydra(
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+[rank1]:     _run_app(
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+[rank1]:     run_and_report(
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 223, in run_and_report
+[rank1]:     raise ex
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+[rank1]:     return func()
+[rank1]:            ^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+[rank1]:     lambda: hydra.run(
+[rank1]:             ^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/hydra.py", line 132, in run
+[rank1]:     _ = ret.return_value
+[rank1]:         ^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/hydra/core/utils.py", line 260, in return_value
+[rank1]:     raise self._return_value
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/hydra/core/utils.py", line 186, in run_job
+[rank1]:     ret.return_value = task_function(task_cfg)
+[rank1]:                        ^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/utils/config_utils.py", line 104, in validations_wrapper
+[rank1]:     return fn(merged_config, *args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/fsx/ubuntu/tmp/ip-10-1-24-129/examples/llama/llama_pretrain.py", line 38, in main
+[rank1]:     train(cfg)
+[rank1]:   File "/fsx/ubuntu/tmp/ip-10-1-24-129/examples/llama/llama_pretrain.py", line 32, in train
+[rank1]:     trainer.fit(model_module, datamodule=data_module)
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 543, in fit
+[rank1]:     call._call_and_handle_interrupt(
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 44, in _call_and_handle_interrupt
+[rank1]:     return trainer_fn(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 579, in _fit_impl
+[rank1]:     self._run(model, ckpt_path=ckpt_path)
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 986, in _run
+[rank1]:     results = self._run_stage()
+[rank1]:               ^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 1030, in _run_stage
+[rank1]:     self.fit_loop.run()
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 205, in run
+[rank1]:     self.advance()
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 363, in advance
+[rank1]:     self.epoch_loop.run(self._data_fetcher)
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 140, in run
+[rank1]:     self.advance(data_fetcher)
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 250, in advance
+[rank1]:     batch_output = self.automatic_optimization.run(trainer.optimizers[0], batch_idx, kwargs)
+[rank1]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 190, in run
+[rank1]:     self._optimizer_step(batch_idx, closure)
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 268, in _optimizer_step
+[rank1]:     call._call_lightning_module_hook(
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 159, in _call_lightning_module_hook
+[rank1]:     output = fn(*args, **kwargs)
+[rank1]:              ^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/core/module.py", line 1308, in optimizer_step
+[rank1]:     optimizer.step(closure=optimizer_closure)
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/core/optimizer.py", line 153, in step
+[rank1]:     step_output = self._strategy.optimizer_step(self._optimizer, closure, **kwargs)
+[rank1]:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/parts/fsdp_strategy.py", line 271, in optimizer_step
+[rank1]:     super().optimizer_step(*a, **kw)
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/strategies/strategy.py", line 238, in optimizer_step
+[rank1]:     return self.precision_plugin.optimizer_step(optimizer, model=model, closure=closure, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/plugins/precision/fsdp.py", line 149, in optimizer_step
+[rank1]:     return super().optimizer_step(optimizer, model=model, closure=closure, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/plugins/precision/precision.py", line 122, in optimizer_step
+[rank1]:     return optimizer.step(closure=closure, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/lr_scheduler.py", line 130, in wrapper
+[rank1]:     return func.__get__(opt, opt.__class__)(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/optimizer.py", line 484, in wrapper
+[rank1]:     out = func(*args, **kwargs)
+[rank1]:           ^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/optimizer.py", line 89, in _use_grad
+[rank1]:     ret = func(self, *args, **kwargs)
+[rank1]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/adamw.py", line 204, in step
+[rank1]:     loss = closure()
+[rank1]:            ^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/plugins/precision/precision.py", line 108, in _wrap_closure
+[rank1]:     closure_result = closure()
+[rank1]:                      ^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 144, in __call__
+[rank1]:     self._result = self.closure(*args, **kwargs)
+[rank1]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+[rank1]:     return func(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 129, in closure
+[rank1]:     step_output = self._step_fn()
+[rank1]:                   ^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 317, in _training_step
+[rank1]:     training_step_output = call._call_strategy_hook(trainer, "training_step", *kwargs.values())
+[rank1]:                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 311, in _call_strategy_hook
+[rank1]:     output = fn(*args, **kwargs)
+[rank1]:              ^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/strategies/strategy.py", line 390, in training_step
+[rank1]:     return self.lightning_module.training_step(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/nemo/utils/model_utils.py", line 434, in wrap_training_step
+[rank1]:     output_dict = wrapped(*args, **kwargs)
+[rank1]:                   ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/model/sagemaker_base_model.py", line 434, in training_step
+[rank1]:     self.loss = self._training_step(batch, batch_idx, *a, **kw)
+[rank1]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/model/sagemaker_base_model.py", line 418, in _training_step
+[rank1]:     return self(
+[rank1]:            ^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank1]:     return self._call_impl(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank1]:     return forward_call(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/model/sagemaker_base_model.py", line 504, in forward
+[rank1]:     return self.model(*a, **kw)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank1]:     return self._call_impl(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank1]:     return forward_call(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 874, in forward
+[rank1]:     output = self._fsdp_wrapped_module(*args, **kwargs)
+[rank1]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/transformed_module.py", line 17, in __call__
+[rank1]:     module_outputs = super().__call__(
+[rank1]:                      ^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank1]:     return self._call_impl(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank1]:     return forward_call(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/transformer.py", line 376, in forward
+[rank1]:     lm_logits = self.lm_head(hidden_states)
+[rank1]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank1]:     return self._call_impl(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank1]:     return forward_call(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/linear.py", line 117, in forward
+[rank1]:     return F.linear(input, self.weight, self.bias)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]: torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 3.91 GiB. GPU 1 has a total capacity of 21.98 GiB of which 1.08 GiB is free. Including non-PyTorch memory, this process has 20.88 GiB memory in use. Of the allocated memory 20.39 GiB is allocated by PyTorch, and 65.10 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Error executing job with overrides: []
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/fsx/ubuntu/tmp/ip-10-1-24-129/examples/llama/llama_pretrain.py", line 43, in <module>
+[rank2]:     main()
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/hydra/main.py", line 94, in decorated_main
+[rank2]:     _run_hydra(
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+[rank2]:     _run_app(
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+[rank2]:     run_and_report(
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 223, in run_and_report
+[rank2]:     raise ex
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+[rank2]:     return func()
+[rank2]:            ^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+[rank2]:     lambda: hydra.run(
+[rank2]:             ^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/hydra.py", line 132, in run
+[rank2]:     _ = ret.return_value
+[rank2]:         ^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/hydra/core/utils.py", line 260, in return_value
+[rank2]:     raise self._return_value
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/hydra/core/utils.py", line 186, in run_job
+[rank2]:     ret.return_value = task_function(task_cfg)
+[rank2]:                        ^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/utils/config_utils.py", line 104, in validations_wrapper
+[rank2]:     return fn(merged_config, *args, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/fsx/ubuntu/tmp/ip-10-1-24-129/examples/llama/llama_pretrain.py", line 38, in main
+[rank2]:     train(cfg)
+[rank2]:   File "/fsx/ubuntu/tmp/ip-10-1-24-129/examples/llama/llama_pretrain.py", line 32, in train
+[rank2]:     trainer.fit(model_module, datamodule=data_module)
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 543, in fit
+[rank2]:     call._call_and_handle_interrupt(
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 44, in _call_and_handle_interrupt
+[rank2]:     return trainer_fn(*args, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 579, in _fit_impl
+[rank2]:     self._run(model, ckpt_path=ckpt_path)
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 986, in _run
+[rank2]:     results = self._run_stage()
+[rank2]:               ^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 1030, in _run_stage
+[rank2]:     self.fit_loop.run()
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 205, in run
+[rank2]:     self.advance()
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 363, in advance
+[rank2]:     self.epoch_loop.run(self._data_fetcher)
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 140, in run
+[rank2]:     self.advance(data_fetcher)
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 250, in advance
+[rank2]:     batch_output = self.automatic_optimization.run(trainer.optimizers[0], batch_idx, kwargs)
+[rank2]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 190, in run
+[rank2]:     self._optimizer_step(batch_idx, closure)
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 268, in _optimizer_step
+[rank2]:     call._call_lightning_module_hook(
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 159, in _call_lightning_module_hook
+[rank2]:     output = fn(*args, **kwargs)
+[rank2]:              ^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/core/module.py", line 1308, in optimizer_step
+[rank2]:     optimizer.step(closure=optimizer_closure)
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/core/optimizer.py", line 153, in step
+[rank2]:     step_output = self._strategy.optimizer_step(self._optimizer, closure, **kwargs)
+[rank2]:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/parts/fsdp_strategy.py", line 271, in optimizer_step
+[rank2]:     super().optimizer_step(*a, **kw)
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/strategies/strategy.py", line 238, in optimizer_step
+[rank2]:     return self.precision_plugin.optimizer_step(optimizer, model=model, closure=closure, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/plugins/precision/fsdp.py", line 149, in optimizer_step
+[rank2]:     return super().optimizer_step(optimizer, model=model, closure=closure, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/plugins/precision/precision.py", line 122, in optimizer_step
+[rank2]:     return optimizer.step(closure=closure, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/lr_scheduler.py", line 130, in wrapper
+[rank2]:     return func.__get__(opt, opt.__class__)(*args, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/optimizer.py", line 484, in wrapper
+[rank2]:     out = func(*args, **kwargs)
+[rank2]:           ^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/optimizer.py", line 89, in _use_grad
+[rank2]:     ret = func(self, *args, **kwargs)
+[rank2]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/adamw.py", line 204, in step
+[rank2]:     loss = closure()
+[rank2]:            ^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/plugins/precision/precision.py", line 108, in _wrap_closure
+[rank2]:     closure_result = closure()
+[rank2]:                      ^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 144, in __call__
+[rank2]:     self._result = self.closure(*args, **kwargs)
+[rank2]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+[rank2]:     return func(*args, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 129, in closure
+[rank2]:     step_output = self._step_fn()
+[rank2]:                   ^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 317, in _training_step
+[rank2]:     training_step_output = call._call_strategy_hook(trainer, "training_step", *kwargs.values())
+[rank2]:                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 311, in _call_strategy_hook
+[rank2]:     output = fn(*args, **kwargs)
+[rank2]:              ^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/strategies/strategy.py", line 390, in training_step
+[rank2]:     return self.lightning_module.training_step(*args, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/nemo/utils/model_utils.py", line 434, in wrap_training_step
+[rank2]:     output_dict = wrapped(*args, **kwargs)
+[rank2]:                   ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/model/sagemaker_base_model.py", line 434, in training_step
+[rank2]:     self.loss = self._training_step(batch, batch_idx, *a, **kw)
+[rank2]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/model/sagemaker_base_model.py", line 418, in _training_step
+[rank2]:     return self(
+[rank2]:            ^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank2]:     return self._call_impl(*args, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank2]:     return forward_call(*args, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/model/sagemaker_base_model.py", line 504, in forward
+[rank2]:     return self.model(*a, **kw)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank2]:     return self._call_impl(*args, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank2]:     return forward_call(*args, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 874, in forward
+[rank2]:     output = self._fsdp_wrapped_module(*args, **kwargs)
+[rank2]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/transformed_module.py", line 17, in __call__
+[rank2]:     module_outputs = super().__call__(
+[rank2]:                      ^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank2]:     return self._call_impl(*args, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank2]:     return forward_call(*args, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/transformer.py", line 376, in forward
+[rank2]:     lm_logits = self.lm_head(hidden_states)
+[rank2]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank2]:     return self._call_impl(*args, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank2]:     return forward_call(*args, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/linear.py", line 117, in forward
+[rank2]:     return F.linear(input, self.weight, self.bias)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]: torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 3.91 GiB. GPU 2 has a total capacity of 21.98 GiB of which 1.08 GiB is free. Including non-PyTorch memory, this process has 20.88 GiB memory in use. Of the allocated memory 20.39 GiB is allocated by PyTorch, and 65.10 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Error executing job with overrides: []
+Error executing job with overrides: []
+[rank4]: Traceback (most recent call last):
+[rank4]:   File "/fsx/ubuntu/tmp/ip-10-1-24-129/examples/llama/llama_pretrain.py", line 43, in <module>
+[rank4]:     main()
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/hydra/main.py", line 94, in decorated_main
+[rank4]:     _run_hydra(
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+[rank4]:     _run_app(
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+[rank4]:     run_and_report(
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 223, in run_and_report
+[rank4]:     raise ex
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+[rank4]:     return func()
+[rank4]:            ^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+[rank4]:     lambda: hydra.run(
+[rank4]:             ^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/hydra.py", line 132, in run
+[rank4]:     _ = ret.return_value
+[rank4]:         ^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/hydra/core/utils.py", line 260, in return_value
+[rank4]:     raise self._return_value
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/hydra/core/utils.py", line 186, in run_job
+[rank4]:     ret.return_value = task_function(task_cfg)
+[rank4]:                        ^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/utils/config_utils.py", line 104, in validations_wrapper
+[rank4]:     return fn(merged_config, *args, **kwargs)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/fsx/ubuntu/tmp/ip-10-1-24-129/examples/llama/llama_pretrain.py", line 38, in main
+[rank4]:     train(cfg)
+[rank4]:   File "/fsx/ubuntu/tmp/ip-10-1-24-129/examples/llama/llama_pretrain.py", line 32, in train
+[rank4]:     trainer.fit(model_module, datamodule=data_module)
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 543, in fit
+[rank4]:     call._call_and_handle_interrupt(
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 44, in _call_and_handle_interrupt
+[rank4]:     return trainer_fn(*args, **kwargs)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 579, in _fit_impl
+[rank4]:     self._run(model, ckpt_path=ckpt_path)
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 986, in _run
+[rank4]:     results = self._run_stage()
+[rank4]:               ^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 1030, in _run_stage
+[rank4]:     self.fit_loop.run()
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 205, in run
+[rank4]:     self.advance()
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 363, in advance
+[rank4]:     self.epoch_loop.run(self._data_fetcher)
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 140, in run
+[rank4]:     self.advance(data_fetcher)
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 250, in advance
+[rank4]:     batch_output = self.automatic_optimization.run(trainer.optimizers[0], batch_idx, kwargs)
+[rank4]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 190, in run
+[rank4]:     self._optimizer_step(batch_idx, closure)
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 268, in _optimizer_step
+[rank4]:     call._call_lightning_module_hook(
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 159, in _call_lightning_module_hook
+[rank4]:     output = fn(*args, **kwargs)
+[rank4]:              ^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/core/module.py", line 1308, in optimizer_step
+[rank4]:     optimizer.step(closure=optimizer_closure)
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/core/optimizer.py", line 153, in step
+[rank4]:     step_output = self._strategy.optimizer_step(self._optimizer, closure, **kwargs)
+[rank4]:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/parts/fsdp_strategy.py", line 271, in optimizer_step
+[rank4]:     super().optimizer_step(*a, **kw)
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/strategies/strategy.py", line 238, in optimizer_step
+[rank4]:     return self.precision_plugin.optimizer_step(optimizer, model=model, closure=closure, **kwargs)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/plugins/precision/fsdp.py", line 149, in optimizer_step
+[rank4]:     return super().optimizer_step(optimizer, model=model, closure=closure, **kwargs)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/plugins/precision/precision.py", line 122, in optimizer_step
+[rank4]:     return optimizer.step(closure=closure, **kwargs)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/lr_scheduler.py", line 130, in wrapper
+[rank4]:     return func.__get__(opt, opt.__class__)(*args, **kwargs)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/optimizer.py", line 484, in wrapper
+[rank4]:     out = func(*args, **kwargs)
+[rank4]:           ^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/optimizer.py", line 89, in _use_grad
+[rank4]:     ret = func(self, *args, **kwargs)
+[rank4]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/adamw.py", line 204, in step
+[rank4]:     loss = closure()
+[rank4]:            ^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/plugins/precision/precision.py", line 108, in _wrap_closure
+[rank4]:     closure_result = closure()
+[rank4]:                      ^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 144, in __call__
+[rank4]:     self._result = self.closure(*args, **kwargs)
+[rank4]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+[rank4]:     return func(*args, **kwargs)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 129, in closure
+[rank4]:     step_output = self._step_fn()
+[rank4]:                   ^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 317, in _training_step
+[rank4]:     training_step_output = call._call_strategy_hook(trainer, "training_step", *kwargs.values())
+[rank4]:                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 311, in _call_strategy_hook
+[rank4]:     output = fn(*args, **kwargs)
+[rank4]:              ^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/strategies/strategy.py", line 390, in training_step
+[rank4]:     return self.lightning_module.training_step(*args, **kwargs)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/nemo/utils/model_utils.py", line 434, in wrap_training_step
+[rank4]:     output_dict = wrapped(*args, **kwargs)
+[rank4]:                   ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/model/sagemaker_base_model.py", line 434, in training_step
+[rank4]:     self.loss = self._training_step(batch, batch_idx, *a, **kw)
+[rank4]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/model/sagemaker_base_model.py", line 418, in _training_step
+[rank4]:     return self(
+[rank4]:            ^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank4]:     return self._call_impl(*args, **kwargs)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank4]:     return forward_call(*args, **kwargs)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/model/sagemaker_base_model.py", line 504, in forward
+[rank4]:     return self.model(*a, **kw)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank4]:     return self._call_impl(*args, **kwargs)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank4]:     return forward_call(*args, **kwargs)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 874, in forward
+[rank4]:     output = self._fsdp_wrapped_module(*args, **kwargs)
+[rank4]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/transformed_module.py", line 17, in __call__
+[rank4]:     module_outputs = super().__call__(
+[rank4]:                      ^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank4]:     return self._call_impl(*args, **kwargs)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank4]:     return forward_call(*args, **kwargs)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/transformer.py", line 376, in forward
+[rank4]:     lm_logits = self.lm_head(hidden_states)
+[rank4]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank4]:     return self._call_impl(*args, **kwargs)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank4]:     return forward_call(*args, **kwargs)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/linear.py", line 117, in forward
+[rank4]:     return F.linear(input, self.weight, self.bias)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]: torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 3.91 GiB. GPU 4 has a total capacity of 21.98 GiB of which 1.08 GiB is free. Including non-PyTorch memory, this process has 20.88 GiB memory in use. Of the allocated memory 20.39 GiB is allocated by PyTorch, and 65.10 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[rank6]: Traceback (most recent call last):
+[rank6]:   File "/fsx/ubuntu/tmp/ip-10-1-24-129/examples/llama/llama_pretrain.py", line 43, in <module>
+[rank6]:     main()
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/hydra/main.py", line 94, in decorated_main
+[rank6]:     _run_hydra(
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+[rank6]:     _run_app(
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+[rank6]:     run_and_report(
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 223, in run_and_report
+[rank6]:     raise ex
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+[rank6]:     return func()
+[rank6]:            ^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+[rank6]:     lambda: hydra.run(
+[rank6]:             ^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/hydra.py", line 132, in run
+[rank6]:     _ = ret.return_value
+[rank6]:         ^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/hydra/core/utils.py", line 260, in return_value
+[rank6]:     raise self._return_value
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/hydra/core/utils.py", line 186, in run_job
+[rank6]:     ret.return_value = task_function(task_cfg)
+[rank6]:                        ^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/utils/config_utils.py", line 104, in validations_wrapper
+[rank6]:     return fn(merged_config, *args, **kwargs)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/fsx/ubuntu/tmp/ip-10-1-24-129/examples/llama/llama_pretrain.py", line 38, in main
+[rank6]:     train(cfg)
+[rank6]:   File "/fsx/ubuntu/tmp/ip-10-1-24-129/examples/llama/llama_pretrain.py", line 32, in train
+[rank6]:     trainer.fit(model_module, datamodule=data_module)
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 543, in fit
+[rank6]:     call._call_and_handle_interrupt(
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 44, in _call_and_handle_interrupt
+[rank6]:     return trainer_fn(*args, **kwargs)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 579, in _fit_impl
+[rank6]:     self._run(model, ckpt_path=ckpt_path)
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 986, in _run
+[rank6]:     results = self._run_stage()
+[rank6]:               ^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 1030, in _run_stage
+[rank6]:     self.fit_loop.run()
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 205, in run
+[rank6]:     self.advance()
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 363, in advance
+[rank6]:     self.epoch_loop.run(self._data_fetcher)
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 140, in run
+[rank6]:     self.advance(data_fetcher)
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 250, in advance
+[rank6]:     batch_output = self.automatic_optimization.run(trainer.optimizers[0], batch_idx, kwargs)
+[rank6]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 190, in run
+[rank6]:     self._optimizer_step(batch_idx, closure)
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 268, in _optimizer_step
+[rank6]:     call._call_lightning_module_hook(
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 159, in _call_lightning_module_hook
+[rank6]:     output = fn(*args, **kwargs)
+[rank6]:              ^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/core/module.py", line 1308, in optimizer_step
+[rank6]:     optimizer.step(closure=optimizer_closure)
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/core/optimizer.py", line 153, in step
+[rank6]:     step_output = self._strategy.optimizer_step(self._optimizer, closure, **kwargs)
+[rank6]:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/parts/fsdp_strategy.py", line 271, in optimizer_step
+[rank6]:     super().optimizer_step(*a, **kw)
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/strategies/strategy.py", line 238, in optimizer_step
+[rank6]:     return self.precision_plugin.optimizer_step(optimizer, model=model, closure=closure, **kwargs)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/plugins/precision/fsdp.py", line 149, in optimizer_step
+[rank6]:     return super().optimizer_step(optimizer, model=model, closure=closure, **kwargs)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/plugins/precision/precision.py", line 122, in optimizer_step
+[rank6]:     return optimizer.step(closure=closure, **kwargs)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/lr_scheduler.py", line 130, in wrapper
+[rank6]:     return func.__get__(opt, opt.__class__)(*args, **kwargs)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/optimizer.py", line 484, in wrapper
+[rank6]:     out = func(*args, **kwargs)
+[rank6]:           ^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/optimizer.py", line 89, in _use_grad
+[rank6]:     ret = func(self, *args, **kwargs)
+[rank6]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/adamw.py", line 204, in step
+[rank6]:     loss = closure()
+[rank6]:            ^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/plugins/precision/precision.py", line 108, in _wrap_closure
+[rank6]:     closure_result = closure()
+[rank6]:                      ^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 144, in __call__
+[rank6]:     self._result = self.closure(*args, **kwargs)
+[rank6]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+[rank6]:     return func(*args, **kwargs)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 129, in closure
+[rank6]:     step_output = self._step_fn()
+[rank6]:                   ^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 317, in _training_step
+[rank6]:     training_step_output = call._call_strategy_hook(trainer, "training_step", *kwargs.values())
+[rank6]:                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 311, in _call_strategy_hook
+[rank6]:     output = fn(*args, **kwargs)
+[rank6]:              ^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/strategies/strategy.py", line 390, in training_step
+[rank6]:     return self.lightning_module.training_step(*args, **kwargs)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/nemo/utils/model_utils.py", line 434, in wrap_training_step
+[rank6]:     output_dict = wrapped(*args, **kwargs)
+[rank6]:                   ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/model/sagemaker_base_model.py", line 434, in training_step
+[rank6]:     self.loss = self._training_step(batch, batch_idx, *a, **kw)
+[rank6]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/model/sagemaker_base_model.py", line 418, in _training_step
+[rank6]:     return self(
+[rank6]:            ^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank6]:     return self._call_impl(*args, **kwargs)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank6]:     return forward_call(*args, **kwargs)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/model/sagemaker_base_model.py", line 504, in forward
+[rank6]:     return self.model(*a, **kw)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank6]:     return self._call_impl(*args, **kwargs)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank6]:     return forward_call(*args, **kwargs)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 874, in forward
+[rank6]:     output = self._fsdp_wrapped_module(*args, **kwargs)
+[rank6]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/transformed_module.py", line 17, in __call__
+[rank6]:     module_outputs = super().__call__(
+[rank6]:                      ^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank6]:     return self._call_impl(*args, **kwargs)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank6]:     return forward_call(*args, **kwargs)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/transformer.py", line 376, in forward
+[rank6]:     lm_logits = self.lm_head(hidden_states)
+[rank6]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank6]:     return self._call_impl(*args, **kwargs)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank6]:     return forward_call(*args, **kwargs)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/linear.py", line 117, in forward
+[rank6]:     return F.linear(input, self.weight, self.bias)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]: torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 3.91 GiB. GPU 6 has a total capacity of 21.98 GiB of which 1.08 GiB is free. Including non-PyTorch memory, this process has 20.88 GiB memory in use. Of the allocated memory 20.39 GiB is allocated by PyTorch, and 65.10 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Error executing job with overrides: []
+[rank5]: Traceback (most recent call last):
+[rank5]:   File "/fsx/ubuntu/tmp/ip-10-1-24-129/examples/llama/llama_pretrain.py", line 43, in <module>
+[rank5]:     main()
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/hydra/main.py", line 94, in decorated_main
+[rank5]:     _run_hydra(
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+[rank5]:     _run_app(
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+[rank5]:     run_and_report(
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 223, in run_and_report
+[rank5]:     raise ex
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+[rank5]:     return func()
+[rank5]:            ^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+[rank5]:     lambda: hydra.run(
+[rank5]:             ^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/hydra.py", line 132, in run
+[rank5]:     _ = ret.return_value
+[rank5]:         ^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/hydra/core/utils.py", line 260, in return_value
+[rank5]:     raise self._return_value
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/hydra/core/utils.py", line 186, in run_job
+[rank5]:     ret.return_value = task_function(task_cfg)
+[rank5]:                        ^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/utils/config_utils.py", line 104, in validations_wrapper
+[rank5]:     return fn(merged_config, *args, **kwargs)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/fsx/ubuntu/tmp/ip-10-1-24-129/examples/llama/llama_pretrain.py", line 38, in main
+[rank5]:     train(cfg)
+[rank5]:   File "/fsx/ubuntu/tmp/ip-10-1-24-129/examples/llama/llama_pretrain.py", line 32, in train
+[rank5]:     trainer.fit(model_module, datamodule=data_module)
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 543, in fit
+[rank5]:     call._call_and_handle_interrupt(
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 44, in _call_and_handle_interrupt
+[rank5]:     return trainer_fn(*args, **kwargs)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 579, in _fit_impl
+[rank5]:     self._run(model, ckpt_path=ckpt_path)
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 986, in _run
+[rank5]:     results = self._run_stage()
+[rank5]:               ^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 1030, in _run_stage
+[rank5]:     self.fit_loop.run()
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 205, in run
+[rank5]:     self.advance()
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 363, in advance
+[rank5]:     self.epoch_loop.run(self._data_fetcher)
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 140, in run
+[rank5]:     self.advance(data_fetcher)
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 250, in advance
+[rank5]:     batch_output = self.automatic_optimization.run(trainer.optimizers[0], batch_idx, kwargs)
+[rank5]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 190, in run
+[rank5]:     self._optimizer_step(batch_idx, closure)
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 268, in _optimizer_step
+[rank5]:     call._call_lightning_module_hook(
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 159, in _call_lightning_module_hook
+[rank5]:     output = fn(*args, **kwargs)
+[rank5]:              ^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/core/module.py", line 1308, in optimizer_step
+[rank5]:     optimizer.step(closure=optimizer_closure)
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/core/optimizer.py", line 153, in step
+[rank5]:     step_output = self._strategy.optimizer_step(self._optimizer, closure, **kwargs)
+[rank5]:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/parts/fsdp_strategy.py", line 271, in optimizer_step
+[rank5]:     super().optimizer_step(*a, **kw)
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/strategies/strategy.py", line 238, in optimizer_step
+[rank5]:     return self.precision_plugin.optimizer_step(optimizer, model=model, closure=closure, **kwargs)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/plugins/precision/fsdp.py", line 149, in optimizer_step
+[rank5]:     return super().optimizer_step(optimizer, model=model, closure=closure, **kwargs)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/plugins/precision/precision.py", line 122, in optimizer_step
+[rank5]:     return optimizer.step(closure=closure, **kwargs)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/lr_scheduler.py", line 130, in wrapper
+[rank5]:     return func.__get__(opt, opt.__class__)(*args, **kwargs)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/optimizer.py", line 484, in wrapper
+[rank5]:     out = func(*args, **kwargs)
+[rank5]:           ^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/optimizer.py", line 89, in _use_grad
+[rank5]:     ret = func(self, *args, **kwargs)
+[rank5]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/adamw.py", line 204, in step
+[rank5]:     loss = closure()
+[rank5]:            ^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/plugins/precision/precision.py", line 108, in _wrap_closure
+[rank5]:     closure_result = closure()
+[rank5]:                      ^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 144, in __call__
+[rank5]:     self._result = self.closure(*args, **kwargs)
+[rank5]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+[rank5]:     return func(*args, **kwargs)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 129, in closure
+[rank5]:     step_output = self._step_fn()
+[rank5]:                   ^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 317, in _training_step
+[rank5]:     training_step_output = call._call_strategy_hook(trainer, "training_step", *kwargs.values())
+[rank5]:                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 311, in _call_strategy_hook
+[rank5]:     output = fn(*args, **kwargs)
+[rank5]:              ^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/strategies/strategy.py", line 390, in training_step
+[rank5]:     return self.lightning_module.training_step(*args, **kwargs)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/nemo/utils/model_utils.py", line 434, in wrap_training_step
+[rank5]:     output_dict = wrapped(*args, **kwargs)
+[rank5]:                   ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/model/sagemaker_base_model.py", line 434, in training_step
+[rank5]:     self.loss = self._training_step(batch, batch_idx, *a, **kw)
+[rank5]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/model/sagemaker_base_model.py", line 418, in _training_step
+[rank5]:     return self(
+[rank5]:            ^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank5]:     return self._call_impl(*args, **kwargs)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank5]:     return forward_call(*args, **kwargs)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/model/sagemaker_base_model.py", line 504, in forward
+[rank5]:     return self.model(*a, **kw)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank5]:     return self._call_impl(*args, **kwargs)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank5]:     return forward_call(*args, **kwargs)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 874, in forward
+[rank5]:     output = self._fsdp_wrapped_module(*args, **kwargs)
+[rank5]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/transformed_module.py", line 17, in __call__
+[rank5]:     module_outputs = super().__call__(
+[rank5]:                      ^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank5]:     return self._call_impl(*args, **kwargs)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank5]:     return forward_call(*args, **kwargs)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/transformer.py", line 376, in forward
+[rank5]:     lm_logits = self.lm_head(hidden_states)
+[rank5]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank5]:     return self._call_impl(*args, **kwargs)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank5]:     return forward_call(*args, **kwargs)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/linear.py", line 117, in forward
+[rank5]:     return F.linear(input, self.weight, self.bias)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]: torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 3.91 GiB. GPU 5 has a total capacity of 21.98 GiB of which 1.08 GiB is free. Including non-PyTorch memory, this process has 20.88 GiB memory in use. Of the allocated memory 20.39 GiB is allocated by PyTorch, and 65.10 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Error executing job with overrides: []
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/fsx/ubuntu/tmp/ip-10-1-24-129/examples/llama/llama_pretrain.py", line 43, in <module>
+[rank0]:     main()
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/hydra/main.py", line 94, in decorated_main
+[rank0]:     _run_hydra(
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+[rank0]:     _run_app(
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+[rank0]:     run_and_report(
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 223, in run_and_report
+[rank0]:     raise ex
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+[rank0]:     return func()
+[rank0]:            ^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+[rank0]:     lambda: hydra.run(
+[rank0]:             ^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/hydra.py", line 132, in run
+[rank0]:     _ = ret.return_value
+[rank0]:         ^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/hydra/core/utils.py", line 260, in return_value
+[rank0]:     raise self._return_value
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/hydra/core/utils.py", line 186, in run_job
+[rank0]:     ret.return_value = task_function(task_cfg)
+[rank0]:                        ^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/utils/config_utils.py", line 104, in validations_wrapper
+[rank0]:     return fn(merged_config, *args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/fsx/ubuntu/tmp/ip-10-1-24-129/examples/llama/llama_pretrain.py", line 38, in main
+[rank0]:     train(cfg)
+[rank0]:   File "/fsx/ubuntu/tmp/ip-10-1-24-129/examples/llama/llama_pretrain.py", line 32, in train
+[rank0]:     trainer.fit(model_module, datamodule=data_module)
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 543, in fit
+[rank0]:     call._call_and_handle_interrupt(
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 44, in _call_and_handle_interrupt
+[rank0]:     return trainer_fn(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 579, in _fit_impl
+[rank0]:     self._run(model, ckpt_path=ckpt_path)
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 986, in _run
+[rank0]:     results = self._run_stage()
+[rank0]:               ^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 1030, in _run_stage
+[rank0]:     self.fit_loop.run()
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 205, in run
+[rank0]:     self.advance()
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 363, in advance
+[rank0]:     self.epoch_loop.run(self._data_fetcher)
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 140, in run
+[rank0]:     self.advance(data_fetcher)
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 250, in advance
+[rank0]:     batch_output = self.automatic_optimization.run(trainer.optimizers[0], batch_idx, kwargs)
+[rank0]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 190, in run
+[rank0]:     self._optimizer_step(batch_idx, closure)
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 268, in _optimizer_step
+[rank0]:     call._call_lightning_module_hook(
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 159, in _call_lightning_module_hook
+[rank0]:     output = fn(*args, **kwargs)
+[rank0]:              ^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/core/module.py", line 1308, in optimizer_step
+[rank0]:     optimizer.step(closure=optimizer_closure)
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/core/optimizer.py", line 153, in step
+[rank0]:     step_output = self._strategy.optimizer_step(self._optimizer, closure, **kwargs)
+[rank0]:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/parts/fsdp_strategy.py", line 271, in optimizer_step
+[rank0]:     super().optimizer_step(*a, **kw)
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/strategies/strategy.py", line 238, in optimizer_step
+[rank0]:     return self.precision_plugin.optimizer_step(optimizer, model=model, closure=closure, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/plugins/precision/fsdp.py", line 149, in optimizer_step
+[rank0]:     return super().optimizer_step(optimizer, model=model, closure=closure, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/plugins/precision/precision.py", line 122, in optimizer_step
+[rank0]:     return optimizer.step(closure=closure, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/lr_scheduler.py", line 130, in wrapper
+[rank0]:     return func.__get__(opt, opt.__class__)(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/optimizer.py", line 484, in wrapper
+[rank0]:     out = func(*args, **kwargs)
+[rank0]:           ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/optimizer.py", line 89, in _use_grad
+[rank0]:     ret = func(self, *args, **kwargs)
+[rank0]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/adamw.py", line 204, in step
+[rank0]:     loss = closure()
+[rank0]:            ^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/plugins/precision/precision.py", line 108, in _wrap_closure
+[rank0]:     closure_result = closure()
+[rank0]:                      ^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 144, in __call__
+[rank0]:     self._result = self.closure(*args, **kwargs)
+[rank0]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 129, in closure
+[rank0]:     step_output = self._step_fn()
+[rank0]:                   ^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 317, in _training_step
+[rank0]:     training_step_output = call._call_strategy_hook(trainer, "training_step", *kwargs.values())
+[rank0]:                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 311, in _call_strategy_hook
+[rank0]:     output = fn(*args, **kwargs)
+[rank0]:              ^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/strategies/strategy.py", line 390, in training_step
+[rank0]:     return self.lightning_module.training_step(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/nemo/utils/model_utils.py", line 434, in wrap_training_step
+[rank0]:     output_dict = wrapped(*args, **kwargs)
+[rank0]:                   ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/model/sagemaker_base_model.py", line 434, in training_step
+[rank0]:     self.loss = self._training_step(batch, batch_idx, *a, **kw)
+[rank0]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/model/sagemaker_base_model.py", line 418, in _training_step
+[rank0]:     return self(
+[rank0]:            ^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/model/sagemaker_base_model.py", line 504, in forward
+[rank0]:     return self.model(*a, **kw)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 874, in forward
+[rank0]:     output = self._fsdp_wrapped_module(*args, **kwargs)
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/transformed_module.py", line 17, in __call__
+[rank0]:     module_outputs = super().__call__(
+[rank0]:                      ^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/transformer.py", line 376, in forward
+[rank0]:     lm_logits = self.lm_head(hidden_states)
+[rank0]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/linear.py", line 117, in forward
+[rank0]:     return F.linear(input, self.weight, self.bias)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 3.91 GiB. GPU 0 has a total capacity of 21.98 GiB of which 1.08 GiB is free. Including non-PyTorch memory, this process has 20.88 GiB memory in use. Of the allocated memory 20.39 GiB is allocated by PyTorch, and 65.10 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Error executing job with overrides: []
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/fsx/ubuntu/tmp/ip-10-1-24-129/examples/llama/llama_pretrain.py", line 43, in <module>
+[rank3]:     main()
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/hydra/main.py", line 94, in decorated_main
+[rank3]:     _run_hydra(
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+[rank3]:     _run_app(
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+[rank3]:     run_and_report(
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 223, in run_and_report
+[rank3]:     raise ex
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+[rank3]:     return func()
+[rank3]:            ^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+[rank3]:     lambda: hydra.run(
+[rank3]:             ^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/hydra.py", line 132, in run
+[rank3]:     _ = ret.return_value
+[rank3]:         ^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/hydra/core/utils.py", line 260, in return_value
+[rank3]:     raise self._return_value
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/hydra/core/utils.py", line 186, in run_job
+[rank3]:     ret.return_value = task_function(task_cfg)
+[rank3]:                        ^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/utils/config_utils.py", line 104, in validations_wrapper
+[rank3]:     return fn(merged_config, *args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/fsx/ubuntu/tmp/ip-10-1-24-129/examples/llama/llama_pretrain.py", line 38, in main
+[rank3]:     train(cfg)
+[rank3]:   File "/fsx/ubuntu/tmp/ip-10-1-24-129/examples/llama/llama_pretrain.py", line 32, in train
+[rank3]:     trainer.fit(model_module, datamodule=data_module)
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 543, in fit
+[rank3]:     call._call_and_handle_interrupt(
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 44, in _call_and_handle_interrupt
+[rank3]:     return trainer_fn(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 579, in _fit_impl
+[rank3]:     self._run(model, ckpt_path=ckpt_path)
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 986, in _run
+[rank3]:     results = self._run_stage()
+[rank3]:               ^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 1030, in _run_stage
+[rank3]:     self.fit_loop.run()
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 205, in run
+[rank3]:     self.advance()
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 363, in advance
+[rank3]:     self.epoch_loop.run(self._data_fetcher)
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 140, in run
+[rank3]:     self.advance(data_fetcher)
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 250, in advance
+[rank3]:     batch_output = self.automatic_optimization.run(trainer.optimizers[0], batch_idx, kwargs)
+[rank3]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 190, in run
+[rank3]:     self._optimizer_step(batch_idx, closure)
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 268, in _optimizer_step
+[rank3]:     call._call_lightning_module_hook(
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 159, in _call_lightning_module_hook
+[rank3]:     output = fn(*args, **kwargs)
+[rank3]:              ^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/core/module.py", line 1308, in optimizer_step
+[rank3]:     optimizer.step(closure=optimizer_closure)
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/core/optimizer.py", line 153, in step
+[rank3]:     step_output = self._strategy.optimizer_step(self._optimizer, closure, **kwargs)
+[rank3]:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/parts/fsdp_strategy.py", line 271, in optimizer_step
+[rank3]:     super().optimizer_step(*a, **kw)
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/strategies/strategy.py", line 238, in optimizer_step
+[rank3]:     return self.precision_plugin.optimizer_step(optimizer, model=model, closure=closure, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/plugins/precision/fsdp.py", line 149, in optimizer_step
+[rank3]:     return super().optimizer_step(optimizer, model=model, closure=closure, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/plugins/precision/precision.py", line 122, in optimizer_step
+[rank3]:     return optimizer.step(closure=closure, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/lr_scheduler.py", line 130, in wrapper
+[rank3]:     return func.__get__(opt, opt.__class__)(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/optimizer.py", line 484, in wrapper
+[rank3]:     out = func(*args, **kwargs)
+[rank3]:           ^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/optimizer.py", line 89, in _use_grad
+[rank3]:     ret = func(self, *args, **kwargs)
+[rank3]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/adamw.py", line 204, in step
+[rank3]:     loss = closure()
+[rank3]:            ^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/plugins/precision/precision.py", line 108, in _wrap_closure
+[rank3]:     closure_result = closure()
+[rank3]:                      ^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 144, in __call__
+[rank3]:     self._result = self.closure(*args, **kwargs)
+[rank3]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+[rank3]:     return func(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 129, in closure
+[rank3]:     step_output = self._step_fn()
+[rank3]:                   ^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 317, in _training_step
+[rank3]:     training_step_output = call._call_strategy_hook(trainer, "training_step", *kwargs.values())
+[rank3]:                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 311, in _call_strategy_hook
+[rank3]:     output = fn(*args, **kwargs)
+[rank3]:              ^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/strategies/strategy.py", line 390, in training_step
+[rank3]:     return self.lightning_module.training_step(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/nemo/utils/model_utils.py", line 434, in wrap_training_step
+[rank3]:     output_dict = wrapped(*args, **kwargs)
+[rank3]:                   ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/model/sagemaker_base_model.py", line 434, in training_step
+[rank3]:     self.loss = self._training_step(batch, batch_idx, *a, **kw)
+[rank3]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/model/sagemaker_base_model.py", line 418, in _training_step
+[rank3]:     return self(
+[rank3]:            ^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank3]:     return self._call_impl(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank3]:     return forward_call(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/model/sagemaker_base_model.py", line 504, in forward
+[rank3]:     return self.model(*a, **kw)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank3]:     return self._call_impl(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank3]:     return forward_call(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 874, in forward
+[rank3]:     output = self._fsdp_wrapped_module(*args, **kwargs)
+[rank3]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/transformed_module.py", line 17, in __call__
+[rank3]:     module_outputs = super().__call__(
+[rank3]:                      ^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank3]:     return self._call_impl(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank3]:     return forward_call(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/transformer.py", line 376, in forward
+[rank3]:     lm_logits = self.lm_head(hidden_states)
+[rank3]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank3]:     return self._call_impl(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank3]:     return forward_call(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/linear.py", line 117, in forward
+[rank3]:     return F.linear(input, self.weight, self.bias)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]: torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 3.91 GiB. GPU 3 has a total capacity of 21.98 GiB of which 1.08 GiB is free. Including non-PyTorch memory, this process has 20.88 GiB memory in use. Of the allocated memory 20.39 GiB is allocated by PyTorch, and 65.10 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Error executing job with overrides: []
+[rank7]: Traceback (most recent call last):
+[rank7]:   File "/fsx/ubuntu/tmp/ip-10-1-24-129/examples/llama/llama_pretrain.py", line 43, in <module>
+[rank7]:     main()
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/hydra/main.py", line 94, in decorated_main
+[rank7]:     _run_hydra(
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+[rank7]:     _run_app(
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+[rank7]:     run_and_report(
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 223, in run_and_report
+[rank7]:     raise ex
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+[rank7]:     return func()
+[rank7]:            ^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+[rank7]:     lambda: hydra.run(
+[rank7]:             ^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/hydra/_internal/hydra.py", line 132, in run
+[rank7]:     _ = ret.return_value
+[rank7]:         ^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/hydra/core/utils.py", line 260, in return_value
+[rank7]:     raise self._return_value
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/hydra/core/utils.py", line 186, in run_job
+[rank7]:     ret.return_value = task_function(task_cfg)
+[rank7]:                        ^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/utils/config_utils.py", line 104, in validations_wrapper
+[rank7]:     return fn(merged_config, *args, **kwargs)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/fsx/ubuntu/tmp/ip-10-1-24-129/examples/llama/llama_pretrain.py", line 38, in main
+[rank7]:     train(cfg)
+[rank7]:   File "/fsx/ubuntu/tmp/ip-10-1-24-129/examples/llama/llama_pretrain.py", line 32, in train
+[rank7]:     trainer.fit(model_module, datamodule=data_module)
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 543, in fit
+[rank7]:     call._call_and_handle_interrupt(
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 44, in _call_and_handle_interrupt
+[rank7]:     return trainer_fn(*args, **kwargs)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 579, in _fit_impl
+[rank7]:     self._run(model, ckpt_path=ckpt_path)
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 986, in _run
+[rank7]:     results = self._run_stage()
+[rank7]:               ^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 1030, in _run_stage
+[rank7]:     self.fit_loop.run()
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 205, in run
+[rank7]:     self.advance()
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 363, in advance
+[rank7]:     self.epoch_loop.run(self._data_fetcher)
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 140, in run
+[rank7]:     self.advance(data_fetcher)
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 250, in advance
+[rank7]:     batch_output = self.automatic_optimization.run(trainer.optimizers[0], batch_idx, kwargs)
+[rank7]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 190, in run
+[rank7]:     self._optimizer_step(batch_idx, closure)
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 268, in _optimizer_step
+[rank7]:     call._call_lightning_module_hook(
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 159, in _call_lightning_module_hook
+[rank7]:     output = fn(*args, **kwargs)
+[rank7]:              ^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/core/module.py", line 1308, in optimizer_step
+[rank7]:     optimizer.step(closure=optimizer_closure)
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/core/optimizer.py", line 153, in step
+[rank7]:     step_output = self._strategy.optimizer_step(self._optimizer, closure, **kwargs)
+[rank7]:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/parts/fsdp_strategy.py", line 271, in optimizer_step
+[rank7]:     super().optimizer_step(*a, **kw)
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/strategies/strategy.py", line 238, in optimizer_step
+[rank7]:     return self.precision_plugin.optimizer_step(optimizer, model=model, closure=closure, **kwargs)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/plugins/precision/fsdp.py", line 149, in optimizer_step
+[rank7]:     return super().optimizer_step(optimizer, model=model, closure=closure, **kwargs)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/plugins/precision/precision.py", line 122, in optimizer_step
+[rank7]:     return optimizer.step(closure=closure, **kwargs)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/lr_scheduler.py", line 130, in wrapper
+[rank7]:     return func.__get__(opt, opt.__class__)(*args, **kwargs)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/optimizer.py", line 484, in wrapper
+[rank7]:     out = func(*args, **kwargs)
+[rank7]:           ^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/optimizer.py", line 89, in _use_grad
+[rank7]:     ret = func(self, *args, **kwargs)
+[rank7]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/torch/optim/adamw.py", line 204, in step
+[rank7]:     loss = closure()
+[rank7]:            ^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/plugins/precision/precision.py", line 108, in _wrap_closure
+[rank7]:     closure_result = closure()
+[rank7]:                      ^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 144, in __call__
+[rank7]:     self._result = self.closure(*args, **kwargs)
+[rank7]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+[rank7]:     return func(*args, **kwargs)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 129, in closure
+[rank7]:     step_output = self._step_fn()
+[rank7]:                   ^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 317, in _training_step
+[rank7]:     training_step_output = call._call_strategy_hook(trainer, "training_step", *kwargs.values())
+[rank7]:                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 311, in _call_strategy_hook
+[rank7]:     output = fn(*args, **kwargs)
+[rank7]:              ^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/pytorch_lightning/strategies/strategy.py", line 390, in training_step
+[rank7]:     return self.lightning_module.training_step(*args, **kwargs)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/nemo/utils/model_utils.py", line 434, in wrap_training_step
+[rank7]:     output_dict = wrapped(*args, **kwargs)
+[rank7]:                   ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/model/sagemaker_base_model.py", line 434, in training_step
+[rank7]:     self.loss = self._training_step(batch, batch_idx, *a, **kw)
+[rank7]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/model/sagemaker_base_model.py", line 418, in _training_step
+[rank7]:     return self(
+[rank7]:            ^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank7]:     return self._call_impl(*args, **kwargs)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank7]:     return forward_call(*args, **kwargs)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/hyperpod_nemo_adapter/collections/model/sagemaker_base_model.py", line 504, in forward
+[rank7]:     return self.model(*a, **kw)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank7]:     return self._call_impl(*args, **kwargs)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank7]:     return forward_call(*args, **kwargs)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 874, in forward
+[rank7]:     output = self._fsdp_wrapped_module(*args, **kwargs)
+[rank7]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/transformed_module.py", line 17, in __call__
+[rank7]:     module_outputs = super().__call__(
+[rank7]:                      ^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank7]:     return self._call_impl(*args, **kwargs)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank7]:     return forward_call(*args, **kwargs)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/transformer.py", line 376, in forward
+[rank7]:     lm_logits = self.lm_head(hidden_states)
+[rank7]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank7]:     return self._call_impl(*args, **kwargs)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank7]:     return forward_call(*args, **kwargs)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/linear.py", line 117, in forward
+[rank7]:     return F.linear(input, self.weight, self.bias)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]: torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 3.91 GiB. GPU 7 has a total capacity of 21.98 GiB of which 1.08 GiB is free. Including non-PyTorch memory, this process has 20.88 GiB memory in use. Of the allocated memory 20.39 GiB is allocated by PyTorch, and 65.10 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Training: |          | 0/? [00:00<?, ?it/s]Training:   0%|          | 0/6250 [00:00<?, ?it/s]Epoch 0:   0%|          | 0/6250 [00:00<?, ?it/s] Epoch 0:   0%|          | 0/6250 [00:12<?, ?it/s]
+W0222 13:36:02.920000 140251169281280 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 188461 closing signal SIGTERM
+W0222 13:36:02.923000 140251169281280 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 188462 closing signal SIGTERM
+W0222 13:36:02.925000 140251169281280 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 188463 closing signal SIGTERM
+W0222 13:36:02.932000 140251169281280 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 188465 closing signal SIGTERM
+W0222 13:36:02.932000 140251169281280 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 188466 closing signal SIGTERM
+W0222 13:36:02.936000 140251169281280 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 188467 closing signal SIGTERM
+W0222 13:36:02.946000 140251169281280 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 188468 closing signal SIGTERM
+E0222 13:36:04.695000 140251169281280 torch/distributed/elastic/multiprocessing/api.py:833] failed (exitcode: 1) local_rank: 3 (pid: 188464) of binary: /opt/conda/bin/python
+Traceback (most recent call last):
+  File "/opt/conda/bin/torchrun", line 33, in <module>
+    sys.exit(load_entry_point('torch==2.4.1', 'console_scripts', 'torchrun')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 348, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/torch/distributed/run.py", line 901, in main
+    run(args)
+  File "/opt/conda/lib/python3.11/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/opt/conda/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+examples/llama/llama_pretrain.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-02-22_13:36:02
+  host      : ip-10-1-24-129.ec2.internal
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 188464)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+srun: error: ip-10-1-24-129: task 0: Exited with exit code 1

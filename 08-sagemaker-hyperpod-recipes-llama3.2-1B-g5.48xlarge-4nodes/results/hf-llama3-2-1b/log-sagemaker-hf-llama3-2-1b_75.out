@@ -1,0 +1,136 @@
++ export NCCL_DEBUG=WARN
++ NCCL_DEBUG=WARN
++ DISTRIBUTED_ARGS='--nproc_per_node 8'
+++ hostname
++ LAUNCHER_HOSTNAME=ip-10-1-24-129
++ mkdir -p /fsx/ubuntu/tmp
++ GIT_CLONE_DIR=/fsx/ubuntu/tmp/ip-10-1-24-129
++ [[ -d /fsx/ubuntu/tmp/ip-10-1-24-129 ]]
++ git clone https://github.com/aws/sagemaker-hyperpod-training-adapter-for-nemo.git /fsx/ubuntu/tmp/ip-10-1-24-129
+Cloning into '/fsx/ubuntu/tmp/ip-10-1-24-129'...
++ GIT_CLONE_DIR=/fsx/ubuntu/tmp/ip-10-1-24-129/
++ cd /fsx/ubuntu/tmp/ip-10-1-24-129/
++ rm -rf __pycache__
++ unset SLURM_NTASKS
++ torchrun --nproc_per_node 8 examples/llama/llama_pretrain.py --config-path=/fsx/ubuntu/sagemaker-hyperpod-recipes/results/hf-llama3-2-1b --config-name=hf-llama3-2-1b_hydra.yaml
+W0222 12:00:54.876000 140564193592576 torch/distributed/run.py:779] 
+W0222 12:00:54.876000 140564193592576 torch/distributed/run.py:779] *****************************************
+W0222 12:00:54.876000 140564193592576 torch/distributed/run.py:779] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0222 12:00:54.876000 140564193592576 torch/distributed/run.py:779] *****************************************
+[NeMo W 2025-02-22 12:00:59 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:473: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+[NeMo W 2025-02-22 12:00:59 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:497: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      @custom_bwd
+    
+[NeMo W 2025-02-22 12:00:59 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:521: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+[NeMo W 2025-02-22 12:00:59 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:527: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      @custom_bwd
+    
+[NeMo W 2025-02-22 12:00:59 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:536: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+[NeMo W 2025-02-22 12:00:59 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:542: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      @custom_bwd
+    
+[NeMo W 2025-02-22 12:00:59 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:549: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+[NeMo W 2025-02-22 12:00:59 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:558: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      @custom_bwd
+    
+[NeMo W 2025-02-22 12:00:59 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:565: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+[NeMo W 2025-02-22 12:00:59 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:570: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      @custom_bwd
+    
+[NeMo W 2025-02-22 12:00:59 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:581: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+[NeMo W 2025-02-22 12:00:59 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/utils.py:600: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      @custom_bwd
+    
+[2025-02-22 12:00:59.010: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 12:00:59.025: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 12:00:59.043: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 12:00:59.044: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 12:00:59.065: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 12:00:59.098: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 12:00:59.114: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[2025-02-22 12:00:59.264: W torch/sagemaker/state_handler.py:46] Disabling Torch compile for using torch.sagemaker
+[NeMo W 2025-02-22 12:01:11 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/megatron/core/tensor_parallel/layers.py:278: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+[NeMo W 2025-02-22 12:01:11 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/megatron/core/tensor_parallel/layers.py:294: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      @custom_bwd
+    
+[NeMo W 2025-02-22 12:01:11 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/megatron/core/tensor_parallel/layers.py:389: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+[NeMo W 2025-02-22 12:01:11 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/megatron/core/tensor_parallel/layers.py:428: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      @custom_bwd
+    
+[NeMo W 2025-02-22 12:01:11 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/embedding.py:193: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+[NeMo W 2025-02-22 12:01:11 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/torch/sagemaker/tensor_parallel/embedding.py:258: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      @custom_fwd
+    
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+[NeMo W 2025-02-22 12:01:13 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/megatron/core/dist_checkpointing/strategies/torch.py:22: DeprecationWarning: `torch.distributed._sharded_tensor` will be deprecated, use `torch.distributed._shard.sharded_tensor` instead
+      from torch.distributed._sharded_tensor import ShardedTensor as TorchShardedTensor
+    
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+[NeMo W 2025-02-22 12:01:13 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/megatron/core/models/gpt/gpt_layer_specs.py:41: UserWarning: Apex is not installed. Falling back to Torch LayerNorm
+      warnings.warn(f'Apex is not installed. Falling back to Torch LayerNorm')
+    
+[NeMo W 2025-02-22 12:01:13 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/megatron/core/models/retro/encoder_spec.py:47: UserWarning: Apex is not installed. Falling back to Torch LayerNorm
+      warnings.warn(f'Apex is not installed. Falling back to Torch LayerNorm')
+    
+[NeMo W 2025-02-22 12:01:13 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/megatron/core/models/retro/decoder_spec.py:39: UserWarning: Apex is not installed. Falling back to Torch LayerNorm
+      warnings.warn(f'Apex is not installed. Falling back to Torch LayerNorm')
+    
+[NeMo W 2025-02-22 12:01:13 nemo_logging:393] /opt/conda/lib/python3.11/site-packages/megatron/core/models/T5/t5_spec.py:46: UserWarning: Apex is not installed. Falling back to Torch LayerNorm
+      warnings.warn(f'Apex is not installed. Falling back to Torch LayerNorm')
+    
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+`zarr` distributed checkpoint backend is deprecated. Please switch to PyTorch Distributed format (`torch_dist`).
+[2025-02-22 12:01:15.997: E hyperpod_nemo_adapter/utils/config_utils.py:86] 1 validation error for ConfigWithSMPForbid
+model
+  Value error, 'train_dir' is required since model is not using Synthetic or multi-modal Data [type=value_error, input_value={'model_type': 'llama_v3'...er': {'enabled': False}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/value_error
+[2025-02-22 12:01:16.643: E hyperpod_nemo_adapter/utils/config_utils.py:86] 1 validation error for ConfigWithSMPForbid
+model
+  Value error, 'train_dir' is required since model is not using Synthetic or multi-modal Data [type=value_error, input_value={'model_type': 'llama_v3'...er': {'enabled': False}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/value_error
+[2025-02-22 12:01:17.241: E hyperpod_nemo_adapter/utils/config_utils.py:86] 1 validation error for ConfigWithSMPForbid
+model
+  Value error, 'train_dir' is required since model is not using Synthetic or multi-modal Data [type=value_error, input_value={'model_type': 'llama_v3'...er': {'enabled': False}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/value_error
+[2025-02-22 12:01:17.879: E hyperpod_nemo_adapter/utils/config_utils.py:86] 1 validation error for ConfigWithSMPForbid
+model
+  Value error, 'train_dir' is required since model is not using Synthetic or multi-modal Data [type=value_error, input_value={'model_type': 'llama_v3'...er': {'enabled': False}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/value_error
+[2025-02-22 12:01:17.905: E hyperpod_nemo_adapter/utils/config_utils.py:86] 1 validation error for ConfigWithSMPForbid
+model
+  Value error, 'train_dir' is required since model is not using Synthetic or multi-modal Data [type=value_error, input_value={'model_type': 'llama_v3'...er': {'enabled': False}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/value_error
+[2025-02-22 12:01:17.946: E hyperpod_nemo_adapter/utils/config_utils.py:86] 1 validation error for ConfigWithSMPForbid
+model
+  Value error, 'train_dir' is required since model is not using Synthetic or multi-modal Data [type=value_error, input_value={'model_type': 'llama_v3'...er': {'enabled': False}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/value_error
+[2025-02-22 12:01:18.611: E hyperpod_nemo_adapter/utils/config_utils.py:86] 1 validation error for ConfigWithSMPForbid
+model
+  Value error, 'train_dir' is required since model is not using Synthetic or multi-modal Data [type=value_error, input_value={'model_type': 'llama_v3'...er': {'enabled': False}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/value_error
+[2025-02-22 12:01:18.982: E hyperpod_nemo_adapter/utils/config_utils.py:86] 1 validation error for ConfigWithSMPForbid
+model
+  Value error, 'train_dir' is required since model is not using Synthetic or multi-modal Data [type=value_error, input_value={'model_type': 'llama_v3'...er': {'enabled': False}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/value_error

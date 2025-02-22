@@ -1,0 +1,21 @@
++ export NCCL_DEBUG=WARN
++ NCCL_DEBUG=WARN
++ DISTRIBUTED_ARGS='--nproc_per_node 8'
+++ hostname
++ LAUNCHER_HOSTNAME=ip-10-1-24-129
++ mkdir -p /fsx/ubuntu/tmp
++ GIT_CLONE_DIR=/fsx/ubuntu/tmp/ip-10-1-24-129
++ [[ -d /fsx/ubuntu/tmp/ip-10-1-24-129 ]]
++ rm -rf /fsx/ubuntu/tmp/ip-10-1-24-129
++ git clone https://github.com/aws/sagemaker-hyperpod-training-adapter-for-nemo.git /fsx/ubuntu/tmp/ip-10-1-24-129
+Cloning into '/fsx/ubuntu/tmp/ip-10-1-24-129'...
++ GIT_CLONE_DIR=/fsx/ubuntu/tmp/ip-10-1-24-129/
++ cd /fsx/ubuntu/tmp/ip-10-1-24-129/
++ rm -rf __pycache__
++ unset SLURM_NTASKS
++ torchrun --nproc_per_node 8 examples/llama/llama_pretrain.py --config-path=/fsx/ubuntu/sagemaker-hyperpod-recipes/results/hf-llama3-2-1b --config-name=hf-llama3-2-1b_hydra.yaml
+Traceback (most recent call last):
+  File "/fsx/ubuntu/venv/bin/torchrun", line 5, in <module>
+    from torch.distributed.run import main
+ModuleNotFoundError: No module named 'torch'
+srun: error: ip-10-1-24-129: task 0: Exited with exit code 1

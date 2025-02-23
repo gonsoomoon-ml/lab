@@ -24,7 +24,8 @@ debug: False
 
 # instance_type: p5.48xlarge
 instance_type: g5.48xlarge
-base_results_dir: null  # Location to store the results, checkpoints and logs.
+# base_results_dir: null  # Location to store the results, checkpoints and logs.
+base_results_dir: /fsx/ubuntu/sagemaker-hyperpod-recipes
 
 # container: null
 container: /fsx/ubuntu/sagemaker-hyperpod-recipes/smdistributed-modelparallel.sqsh

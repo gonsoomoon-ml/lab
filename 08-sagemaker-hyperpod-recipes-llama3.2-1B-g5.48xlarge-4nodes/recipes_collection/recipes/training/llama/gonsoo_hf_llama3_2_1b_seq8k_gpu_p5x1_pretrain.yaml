@@ -13,15 +13,16 @@ trainer:
   num_nodes: 4
   accelerator: gpu
   precision: bf16
-  max_steps: 50
+  max_steps: 40
   log_every_n_steps: 1
   val_check_interval: 1
   limit_val_batches: 0 # Number of batches per each validation run, set to 0 to disable validation.
 
 # Basic pytorch lightning experiment config
 # Config for checkpoint/tensorboard etc
+
 exp_manager:
-  exp_dir: null
+  exp_dir: "/fsx/ubuntu/sagemaker-hyperpod-recipes/checkpoints"
   name: experiment
   create_tensorboard_logger: True
   create_checkpoint_callback: True
@@ -29,11 +30,11 @@ exp_manager:
   # Note: These config will not work with auto checkpoint mode
   checkpoint_callback_params:
     # Set save_top_k = 0 to disable sharded checkpointing
-    save_top_k: 0
-    every_n_train_steps: 10
+    save_top_k: 1
+    every_n_train_steps: 20
     monitor: "step"
     mode: "max"
-    save_last: False
+    save_last: True
   checkpoint_dir: ${recipes.exp_manager.exp_dir}/checkpoints/
   resume_from_checkpoint: null
   # Enable auto_checkpoint to automatically calculate the checkpoint interval and resume from checkpoint
@@ -41,8 +42,33 @@ exp_manager:
     enabled: False
   export_full_model:
     # Set every_n_train_steps = 0 to disable full checkpointing
-    every_n_train_steps: 0
+    every_n_train_steps: 20
     save_last: True
+
+# exp_manager:
+#   exp_dir: null
+#   name: experiment
+#   create_tensorboard_logger: True
+#   create_checkpoint_callback: True
+#   # Configs to save checkpoint with a fixed interval
+#   # Note: These config will not work with auto checkpoint mode
+#   checkpoint_callback_params:
+#     # Set save_top_k = 0 to disable sharded checkpointing
+#     save_top_k: 0
+#     every_n_train_steps: 10
+#     monitor: "step"
+#     mode: "max"
+#     save_last: False
+#   checkpoint_dir: ${recipes.exp_manager.exp_dir}/checkpoints/
+#   resume_from_checkpoint: null
+#   # Enable auto_checkpoint to automatically calculate the checkpoint interval and resume from checkpoint
+#   auto_checkpoint:
+#     enabled: False
+#   export_full_model:
+#     # Set every_n_train_steps = 0 to disable full checkpointing
+#     every_n_train_steps: 0
+#     save_last: True
+
 
 ################# Predefined configs ##########################
 use_smp_model: True # Enable sagemaker model parallelism
@@ -61,7 +87,7 @@ model:
 
   # Memory saving /distributed training configs
   # tensor_model_parallel_degree: 1
-  tensor_model_parallel_degree: 2
+  tensor_model_parallel_degree: 4
   expert_model_parallel_degree: 1
   context_parallel_degree: 1
   moe: False

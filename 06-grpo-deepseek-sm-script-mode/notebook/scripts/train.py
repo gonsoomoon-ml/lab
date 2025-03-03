@@ -1,23 +1,59 @@
 
-# Python Built-Ins:
-import argparse
-# import logging
+################################################
+# 1. Check Cuda version
+################################################
+
 import os
+import subprocess
 import sys
-# from typing import List, Optional
 
+def check_cuda_version():
+    print("===== CUDA 환경 진단 정보 =====")
+    
+    # 시스템 CUDA 버전 확인
+    try:
+        nvcc_output = subprocess.check_output(["nvcc", "--version"]).decode("utf-8")
+        print("NVCC 버전 정보:")
+        print(nvcc_output)
+    except Exception as e:
+        print(f"NVCC 버전 확인 실패: {e}")
+    
+    # nvidia-smi로 드라이버 및 CUDA 버전 확인
+    try:
+        nvidia_smi_output = subprocess.check_output(["nvidia-smi"]).decode("utf-8")
+        print("NVIDIA-SMI 정보:")
+        print(nvidia_smi_output)
+    except Exception as e:
+        print(f"NVIDIA-SMI 실행 실패: {e}")
+    
+    # 환경 변수 확인
+    cuda_path = os.environ.get("CUDA_HOME") or os.environ.get("CUDA_PATH")
+    print(f"CUDA_HOME/CUDA_PATH 환경 변수: {cuda_path}")
+    
+    # LD_LIBRARY_PATH 확인 (리눅스/맥)
+    ld_library_path = os.environ.get("LD_LIBRARY_PATH")
+    print(f"LD_LIBRARY_PATH: {ld_library_path}")
+    
+    # Python 버전 확인
+    print(f"Python 버전: {sys.version}")
+    
+    # 설치된 패키지 버전 확인
+    try:
+        pip_freeze = subprocess.check_output([sys.executable, "-m", "pip", "freeze"]).decode("utf-8")
+        print("설치된 관련 패키지:")
+        for line in pip_freeze.split("\n"):
+            if any(pkg in line.lower() for pkg in ["torch", "cuda", "nvidia", "transformers", "vllm", "trl"]):
+                print(line)
+    except Exception as e:
+        print(f"패키지 버전 확인 실패: {e}")
+    
+    print("==============================")
 
-
-import re
-import torch
-from datasets import load_dataset, Dataset
-from transformers import AutoTokenizer, AutoModelForCausalLM
-from trl import GRPOConfig, GRPOTrainer
-
-
+# 진단 코드 실행
+check_cuda_version()
 
 ##############################################################################
-# Add this at the start of your script to verify versions
+#  2. Check out torch and cuda version
 ##############################################################################
 import torch
 print(f"PyTorch version: {torch.__version__}")
@@ -26,7 +62,7 @@ if torch.cuda.is_available():
     print(f"CUDA version: {torch.version.cuda}")
 
 ##############################################################################
-# pip list 실행 및 결과 출력
+# 3. Check out python packages version 
 ##############################################################################
 try:
     result = subprocess.run("pip list | grep -E 'torch|transformers|vllm|trl|datasets'", 
@@ -39,6 +75,20 @@ except Exception as e:
     print(f"Error checking versions: {e}")
 
 
+################################################
+# 4. Load basic library and define basic functions
+################################################
+
+# Python Built-Ins:
+import argparse
+import os
+import sys
+
+import re
+import torch
+from datasets import load_dataset, Dataset
+from transformers import AutoTokenizer, AutoModelForCausalLM
+from trl import GRPOConfig, GRPOTrainer
 
 
 SYSTEM_PROMPT = """
@@ -127,17 +177,24 @@ def xmlcount_reward_func(completions, **kwargs) -> list[float]:
     contents = [completion[0]["content"] for completion in completions]
     return [count_xml(c) for c in contents]
 
+
+################################################
+# 5. Define main function
+################################################
+
 def main(args):
     # Load and prep dataset
 
     dataset = get_gsm8k_questions()
-    print("dataset: ", dataset)
+    print("## dataset: ", dataset)
 
     model_name = "Qwen/Qwen2.5-0.5B-Instruct"
+    num_generations = args.num_generations
 
     output_dir="outputs/Qwen-0.5B-GRPO"
     run_name="Qwen-0.5B-GRPO-gsm8k"
 
+    print("## GRPC Config: ")
     training_args = GRPOConfig(
         output_dir=output_dir,
         run_name=run_name,
@@ -150,8 +207,14 @@ def main(args):
         logging_steps=1,
         bf16=True,
         per_device_train_batch_size=1,
+        # per_device_train_batch_size=2, # error due to 117 data size
         gradient_accumulation_steps=4,
-        num_generations=16,
+        num_generations = num_generations,
+        # num_generations=16, # success on ml.p4de.24xlarge
+        # num_generations=4,  # success on ml.p4d.24xlarge
+        # num_generations=6,  # failure on ml.p4d.24xlarge
+        # num_generations=8,  # failuer on ml.p4d.24xlarge
+        # num_generations=2,  # success on ml.g5.12xlarge
         max_prompt_length=256,
         max_completion_length=200,
         num_train_epochs=1,
@@ -160,19 +223,23 @@ def main(args):
         log_on_each_node=False,
         use_vllm=True,
         vllm_gpu_memory_utilization=.3,
+        # vllm_gpu_memory_utilization=.6,
         vllm_device="cuda:0",
         report_to="none" #I'm disabling Wandb.
     )
 
+    print("## Loading model: ")
     model = AutoModelForCausalLM.from_pretrained(
                 model_name,
                 torch_dtype=torch.bfloat16,
                 device_map=None
             ).to("cuda")
 
+    print("## Loading tokenizer: ")
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     tokenizer.pad_token = tokenizer.eos_token
 
+    print("## Loading trainer: ")
     trainer = GRPOTrainer(
         model=model,
         processing_class=tokenizer,
@@ -186,6 +253,7 @@ def main(args):
         train_dataset=dataset,
         #peft_config=peft_config
     )
+    print("## Start training: ")
     trainer.train()    
 
     # Save the model output
@@ -201,6 +269,7 @@ def parse_args():
     # hyperparameters sent by the client are passed as command-line arguments to the script.
     ##############################################################################
     # Placeholder
+    parser.add_argument("--num_generations", type=int, default=2)
 
     ##############################################################################
     # Data, model, and output folders are set by combination of CLI args and env vars:
@@ -219,6 +288,7 @@ if __name__ == "__main__":
 
     # Load job parameters:
     args = parse_args()
+    print("## args: \n", args)
     main(args)
 
 

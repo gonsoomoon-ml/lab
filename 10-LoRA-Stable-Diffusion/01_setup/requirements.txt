@@ -1,0 +1,10 @@
+accelerate
+torchvision
+transformers
+datasets
+ftfy 
+tensorboard
+git+https://github.com/huggingface/diffusers.git
+torch>=2.1.0
+# xformers
+peft

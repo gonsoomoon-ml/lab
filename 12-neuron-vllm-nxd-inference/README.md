@@ -10,6 +10,8 @@ Last Updated: July 20, 2025
 - [HyperCLOVAX-SEED-Text-Instruct-1.5B](https://huggingface.co/naver-hyperclovax/HyperCLOVAX-SEED-Text-Instruct-1.5B)
 - [Yanolja_EEVE-8B](https://huggingface.co/yanolja/EEVE-Korean-10.8B-v1.0)
 
+- 유투브 데모: 
+    - [Run vllm integrated with AWS Neuron on AWS Trainium for HyperCLOVAX-SEED-Text-Instruct-1.5B](https://www.youtube.com/watch?v=XYW3xwrLQGQ) 
 
 # 1.EC2 인스턴스 설치
 - 다음 가이드를 따라 하세요. --> [NxD Inference Setup Guide](https://awsdocs-neuron.readthedocs-hosted.com/en/latest/libraries/nxd-inference/nxdi-setup.html#option-1-launch-an-instance-using-a-neuron-dlami)
@@ -90,4 +92,11 @@ Last Updated: July 20, 2025
 - vLLM 서빙 및 출력 결과
     - ![two_runs.png](img/two_runs.png)        
 - vLLM 서빙 및 뉴런 사용량
-    - ![neuron_usage.png](img/neuron_usage.png)            
+    - ![neuron_usage.png](img/neuron_usage.png)        
+
+
+# A. Reference
+* [NxD Inference Features Configuration Guide](https://awsdocs-neuron.readthedocs-hosted.com/en/latest/libraries/nxd-inference/developer_guides/feature-guide.html#nxdi-feature-guide)
+* [Models supported in Transformers NeuronX and NxD Inference model hubs](https://awsdocs-neuron.readthedocs-hosted.com/en/latest/libraries/nxd-inference/developer_guides/migrate-from-tnx-to-nxdi.html)
+* [vLLM](https://docs.vllm.ai/en/v0.6.0/index.html)
+* [OpenAI Compatible Server](https://docs.vllm.ai/en/v0.6.0/serving/openai_compatible_server.html)

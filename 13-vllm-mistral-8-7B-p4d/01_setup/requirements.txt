@@ -1,0 +1,7 @@
+# Core vLLM
+vllm==0.10.1.dev1+gbcc0a3cbe
+
+# PyTorch and CUDA
+torch==2.1.2+cu121
+torchvision==0.16.2+cu121
+torchaudio==2.1.2+cu121

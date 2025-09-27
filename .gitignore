@@ -272,6 +272,9 @@ public
 *.lite
 
 # Model files
+model/
+model_artifact/
+model.tar.gz
 models/
 checkpoints/
 weights/

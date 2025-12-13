@@ -1,0 +1,9 @@
+export AWS_REGION=us-east-1
+export INSTANCES=g5.12xlarge
+export VPC_ID=vpc-0b35efe9fa0f3f2a6
+export PRIVATE_SUBNET_ID=subnet-0d344b5d2106993ba
+export PUBLIC_SUBNET_ID=subnet-013cc58ce88b9cbe8
+export FSX_ID=fs-0c7ea8634c2d56cc8
+export FSX_MOUNTNAME=45qtvbuv
+export FSXO_ID=fsvol-02a606526381e62d6
+export SECURITY_GROUP=sg-04b3aa720498887f7

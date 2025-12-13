@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+
+# TensorRT
+*.plan
+*.cache
+
+# ONNX
+*.onnx
+
+# Data
+data/
+
+# Output files
+output/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store

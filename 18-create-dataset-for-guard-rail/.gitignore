@@ -1,0 +1,5 @@
+# Re-include dataset files that are ignored by the top-level repo's generic rules (e.g. *.json)
+!dataset/*.json
+!dataset/*.jsonl
+
+

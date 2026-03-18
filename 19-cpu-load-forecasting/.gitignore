@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual Environment
+venv/
+.venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb
+
+# Data (large files)
+data/*.csv
+!data/train.csv
+!data/test.csv
+data/processed/*.csv
+!data/processed/.gitkeep
+
+# Model files (large)
+results/*/*.pkl
+results/*/*.pth
+results/*/*.csv
+!results/*/.gitkeep
+
+# Logs
+*.log
+logs/
+
+# OS
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+backup/
+
+# Claude settings
+.claude/

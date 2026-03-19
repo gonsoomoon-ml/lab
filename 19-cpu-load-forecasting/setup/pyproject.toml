@@ -19,4 +19,8 @@ dependencies = [
     "jupyter>=1.0.0",
     "jupyterlab>=4.0.0",
     "ipykernel>=6.25.0",
+    "onnx>=1.14.0",
+    "skl2onnx>=1.16.0",
+    "onnxconverter-common>=1.14.0",
+    "onnxmltools>=1.12.0",
 ]
